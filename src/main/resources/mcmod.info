@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
-  "version": "${version}",
-  "mcversion": "${mcversion}",
-  "url": "",
+  "modid": "reactioncraft",
+  "name": "Reactioncraft 3: Rebirth",
+  "description": "The Mod That Does Almost Everything.",
+  "version": "1.0",
+  "mcversion": "1.10.2",
+  "url": "https://www.facebook.com/Reactioncraft/",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["Eragonn1490, , and Team"],
+  "credits": "The Reactioncraft Team",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
