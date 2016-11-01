@@ -6,14 +6,16 @@ import java.util.Set;
 import com.reactioncraft.reactioncraft;
 import com.reactioncraft.core.ItemBase;
 import com.reactioncraft.food.common.*;
-import com.reactioncraft.integration.IntegratedItems;
+import com.reactioncraft.integration.instances.IntegratedItems;
 import com.reactioncraft.net.common.*;
 
 import net.minecraft.block.Block;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.Blocks;
 //Vanilla
 import net.minecraft.item.Item;
-
+import net.minecraft.item.ItemFood;
 //Forge
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
@@ -30,7 +32,7 @@ public class IntegratedItemRegistry
 		IntegratedItems.bones         = register(new ItemBase("bones")        .setCreativeTab(reactioncraft.ReactioncraftItems));
 		
 		//Modified Food Drops
-        IntegratedItems.raw_human     = register(new ItemHumanRaw());
+        //IntegratedItems.raw_human     = register(new ItemHumanRaw());
         IntegratedItems.cooked_human  = register(new ItemHumanCooked());
         IntegratedItems.raw_lamb      = register(new ItemRawLamb());
         IntegratedItems.cooked_lamb   = register(new ItemCookedLamb());  
@@ -39,6 +41,8 @@ public class IntegratedItemRegistry
         IntegratedItems.chicken_head  = register(new ItemChickenHead());  
         IntegratedItems.beef_chunk    = register(new ItemBeef());  
         IntegratedItems.pork_chunk    = register(new ItemPork());  
+        
+        IntegratedItems.raw_human = registerItemFood("raw_human", 1, 3.0f, false);
         
         //Food Items
         IntegratedItems.AncientFruit       = register(new ItemBase("AncientFruit")      .setCreativeTab(reactioncraft.ReactioncraftItems));
@@ -69,7 +73,7 @@ public class IntegratedItemRegistry
       	IntegratedItems.hilt   		 = register(new ItemPieceHilt("hilt")       .setCreativeTab(null));
       	IntegratedItems.net  		 = register(new ItemPieceNet("net")         .setCreativeTab(null));
       	IntegratedItems.complete_net = register(new ItemCompleteNet(IntegratedMaterials.EnumToolMaterialNet));
-      	IntegratedItems.caught       = register(new ItemCaughtEntity("caught")  .setCreativeTab(null));
+      	//IntegratedItems.caught       = register(new ItemCaughtEntity("caught").setCreativeTab(null));
       	IntegratedItems.caughtplayer = register(new ItemBase("caught_player")   .setCreativeTab(null));
       	IntegratedItems.creativeNet  = register(new ItemBase("creative_net")    .setCreativeTab(reactioncraft.ReactioncraftItems));
       	
@@ -183,10 +187,32 @@ public class IntegratedItemRegistry
       	IntegratedItems.honeycomb        = register(new ItemBase("honeycomb")       .setCreativeTab(reactioncraft.ReactioncraftItems));
       	IntegratedItems.pollencomb       = register(new ItemBase("pollencomb")      .setCreativeTab(reactioncraft.ReactioncraftItems));
       	IntegratedItems.Blackdiamondbore = register(new ItemBase("Blackdiamondbore").setCreativeTab(reactioncraft.ReactioncraftItems));
-      	IntegratedItems.Bloodstonebore   = register(new ItemBase("Bloodstonebore")  .setCreativeTab(reactioncraft.ReactioncraftItems));
-      	
+      	IntegratedItems.Bloodstonebore   = register(new ItemBase("Bloodstonebore")  .setCreativeTab(reactioncraft.ReactioncraftItems));    	
 	}
 
+	//Custom Methods
+	public static void registerRenders()
+	{
+		
+		//Foods
+		registerRender(IntegratedItems.raw_human);
+	}
+
+	private static Item registerItemFood(String registryName, int amount, float sat, boolean isWolfFood) 
+	{
+		Item item = new ItemFood(amount, sat, isWolfFood);
+		item.setCreativeTab(reactioncraft.Reactioncraftfood);
+		item.setRegistryName(registryName);
+		item.setUnlocalizedName(registryName);
+
+        return GameRegistry.register(item);
+    }
+	private static void registerRender(Item item) 
+	{
+		Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(reactioncraft.MODID + ":" + item.getUnlocalizedName().substring(5),"inventory"));
+	}
+	
+	//Register Basic Items
 	private static <T extends Item> T register(T item) 
 	{
 		GameRegistry.register(item);

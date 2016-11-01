@@ -1,5 +1,7 @@
 package com.reactioncraft.integration;
 
+import com.reactioncraft.integration.instances.IntegratedItems;
+
 import net.minecraft.init.*;
 import net.minecraft.item.*;
 import net.minecraft.nbt.NBTTagCompound;

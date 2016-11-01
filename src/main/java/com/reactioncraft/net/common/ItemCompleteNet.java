@@ -6,7 +6,7 @@ import com.google.common.collect.ImmutableSet;
 import com.google.common.collect.Sets;
 import com.reactioncraft.reactioncraft;
 import com.reactioncraft.core.ItemModelProvider;
-import com.reactioncraft.integration.IntegratedItems;
+import com.reactioncraft.integration.instances.IntegratedItems;
 
 import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;

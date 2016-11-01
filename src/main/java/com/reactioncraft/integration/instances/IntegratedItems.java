@@ -1,4 +1,4 @@
-package com.reactioncraft.integration;
+package com.reactioncraft.integration.instances;
 
 import com.reactioncraft.core.ItemBase;
 import com.reactioncraft.food.common.*;
@@ -15,7 +15,7 @@ public class IntegratedItems
 	public static ItemBase Knfie;
 	
 	//Food Drops
-	public static ItemHumanRaw raw_human;
+	public static Item raw_human;
 	public static ItemHumanCooked cooked_human;
 	public static ItemRawLamb raw_lamb;
     public static ItemCookedLamb cooked_lamb;
@@ -57,7 +57,7 @@ public class IntegratedItems
     public static ItemBase hilt;
     public static ItemBase net;
     public static ItemCompleteNet complete_net;
-    public static Item caught;
+    //public static ItemBase caught;
     public static Item caughtplayer;
     public static ItemBase creativeNet;
     

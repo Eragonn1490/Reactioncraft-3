@@ -1,7 +1,7 @@
 package com.reactioncraft.core.common.creativeTab;
 
 import com.reactioncraft.reactioncraft;
-import com.reactioncraft.integration.IntegratedItems;
+import com.reactioncraft.integration.instances.IntegratedItems;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.*;

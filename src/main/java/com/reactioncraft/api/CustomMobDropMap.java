@@ -1,7 +1,6 @@
 package com.reactioncraft.api;
 
-//Reactioncraft
-import com.reactioncraft.integration.IntegratedItems;
+import com.reactioncraft.integration.instances.IntegratedItems;
 
 //Vanilla
 import net.minecraft.entity.player.EntityPlayer;
