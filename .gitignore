@@ -1,19 +1,22 @@
-/.gradle/
-/bin/
-/build/
-/eclipse/
-/gradle/
-/run/
+# eclipse
+bin
+*.launch
+.settings
+.metadata
 .classpath
-.settings/
-build.gradle
-CREDITS-fml.txt
-gradlew
-gradlew.bat
-MinecraftForge-Credits.txt
-Paulscode IBXM Library License.txt
-Reactioncraft-3_Client.launch
-Reactioncraft-3_Server.launch
-License-new.txt
-forge-1.10.2-12.18.1.2089-changelog.txt
 .project
+
+# idea
+out
+*.ipr
+*.iws
+*.iml
+.idea
+
+# gradle
+build
+.gradle
+
+# other
+eclipse
+run

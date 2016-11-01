@@ -1,6 +1,6 @@
 package com.reactioncraft.core.common.events;
 
-import com.reactioncraft.integration.IntegratedItems;
+import com.reactioncraft.integration.instances.IntegratedItems;
 
 import net.minecraft.entity.monster.*;
 import net.minecraft.entity.passive.*;

@@ -16,7 +16,7 @@ public class ItemHumanRaw extends ItemFood implements ItemModelProvider, OreDict
 	public ItemHumanRaw() 
 	{
 		super(3, 0.6f, false);
-		this.setRegistryName(reactioncraft.MODID, "raw_human");
+		this.setRegistryName("raw_human");
 		this.setUnlocalizedName("raw_human");
 		this.setCreativeTab(reactioncraft.Reactioncraftfood);
 	}

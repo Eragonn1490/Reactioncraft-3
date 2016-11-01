@@ -5,8 +5,9 @@ import java.util.List;
 import javax.annotation.Nullable;
 
 import com.reactioncraft.reactioncraft;
+import com.reactioncraft.core.ItemBase;
 import com.reactioncraft.core.ItemModelProvider;
-import com.reactioncraft.integration.IntegratedItems;
+import com.reactioncraft.integration.instances.IntegratedItems;
 
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
@@ -28,11 +29,11 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.world.World;
 
-public class ItemCaughtEntity extends Item implements ItemModelProvider
+public class ItemCaughtEntity extends ItemBase implements ItemModelProvider
 {
     public ItemCaughtEntity(String string)
     {
-        super();
+        super(string);
         this.setUnlocalizedName("caught");
         this.setRegistryName("caught");
     }

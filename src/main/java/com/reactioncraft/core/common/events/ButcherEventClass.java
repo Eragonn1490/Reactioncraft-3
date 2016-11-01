@@ -1,7 +1,8 @@
 package com.reactioncraft.core.common.events;
 
 import com.google.common.collect.ImmutableMap;
-import com.reactioncraft.integration.IntegratedItems;
+import com.reactioncraft.integration.instances.IntegratedItems;
+
 import java.util.Map;
 import java.util.Random;
 import net.minecraft.item.*;
