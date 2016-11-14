@@ -1,9 +1,15 @@
 package com.reactioncraft.integration.instances;
 
 import com.reactioncraft.core.ItemBase;
-import com.reactioncraft.food.common.*;
-import com.reactioncraft.net.common.*;
-
+import com.reactioncraft.food.common.ItemBeef;
+import com.reactioncraft.food.common.ItemChickenHead;
+import com.reactioncraft.food.common.ItemCookedHorse;
+import com.reactioncraft.food.common.ItemCookedLamb;
+import com.reactioncraft.food.common.ItemHumanCooked;
+import com.reactioncraft.food.common.ItemPork;
+import com.reactioncraft.food.common.ItemRawHorse;
+import com.reactioncraft.food.common.ItemRawLamb;
+import com.reactioncraft.net.common.ItemCompleteNet;
 import net.minecraft.item.Item;
 
 public class IntegratedItems
@@ -57,7 +63,7 @@ public class IntegratedItems
     public static ItemBase hilt;
     public static ItemBase net;
     public static ItemCompleteNet complete_net;
-    //public static ItemBase caught;
+    public static ItemBase caught;
     public static Item caughtplayer;
     public static ItemBase creativeNet;
     

@@ -1,16 +1,18 @@
 package com.reactioncraft.core.common.events;
 
-import com.google.common.collect.ImmutableMap;
-import com.reactioncraft.integration.instances.IntegratedItems;
-
 import java.util.Map;
 import java.util.Random;
-import net.minecraft.item.*;
-import net.minecraft.entity.EntityLiving;
+import com.google.common.collect.ImmutableMap;
+import com.reactioncraft.integration.instances.IntegratedItems;
 import net.minecraft.entity.EntityLivingBase;
-import net.minecraft.entity.passive.*;
-import net.minecraft.entity.player.*;
-import net.minecraft.init.Items;
+import net.minecraft.entity.passive.EntityChicken;
+import net.minecraft.entity.passive.EntityCow;
+import net.minecraft.entity.passive.EntityHorse;
+import net.minecraft.entity.passive.EntityPig;
+import net.minecraft.entity.passive.EntitySheep;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.event.entity.living.LivingDropsEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 

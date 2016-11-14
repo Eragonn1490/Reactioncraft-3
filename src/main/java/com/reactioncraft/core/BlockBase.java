@@ -1,6 +1,6 @@
 package com.reactioncraft.core;
 
-import com.reactioncraft.reactioncraft;
+import com.reactioncraft.eactioncraft;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -24,7 +24,7 @@ public class BlockBase extends Block
 
 	public void registerItemModel(ItemBlock itemBlock) 
 	{
-		reactioncraft.proxy.registerItemRenderer(itemBlock, 0, name);
+		eactioncraft.proxy.registerItemRenderer(itemBlock, 0, name);
 	}
 
 	@Override

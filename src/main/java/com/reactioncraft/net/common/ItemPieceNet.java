@@ -1,13 +1,14 @@
 package com.reactioncraft.net.common;
 
 import java.util.List;
-
-import com.reactioncraft.reactioncraft;
-import com.reactioncraft.core.*;
-
+import com.reactioncraft.eactioncraft;
+import com.reactioncraft.core.ItemBase;
+import com.reactioncraft.core.ItemModelProvider;
+import com.reactioncraft.core.OreDictionaryInterface;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.*;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 
 
 public class ItemPieceNet extends ItemBase implements ItemModelProvider, OreDictionaryInterface
@@ -25,10 +26,8 @@ public class ItemPieceNet extends ItemBase implements ItemModelProvider, OreDict
         return "Net Piece";
     }
 
-    /**
-     * allows items to add custom lines of information to the mouseover description
-     */
-    public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean par4)
+    @Override
+    public void addInformation(ItemStack itemStack, EntityPlayer player, List<String> list, boolean par4)
     {
         if (itemStack.getTagCompound() != null)
         {
@@ -50,6 +49,6 @@ public class ItemPieceNet extends ItemBase implements ItemModelProvider, OreDict
 	@Override
 	public void registerItemModel(Item item) 
 	{
-		reactioncraft.proxy.registerItemRenderer(this, 0, "net");
+		eactioncraft.proxy.registerItemRenderer(this, 0, "net");
 	}
 }

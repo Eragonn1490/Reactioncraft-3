@@ -1,7 +1,7 @@
 package com.reactioncraft.food.common;
 
 //Reactioncraft
-import com.reactioncraft.reactioncraft;
+import com.reactioncraft.eactioncraft;
 import com.reactioncraft.core.ItemModelProvider;
 import com.reactioncraft.core.OreDictionaryInterface;
 
@@ -18,13 +18,13 @@ public class ItemCookedHorse extends ItemFood implements ItemModelProvider, OreD
 		super(4, 0.8f, false);
 		setUnlocalizedName("cooked_horse");
 		setRegistryName("cooked_horse");
-		setCreativeTab(reactioncraft.Reactioncraftfood);
+		setCreativeTab(eactioncraft.Reactioncraftfood);
 	}
 
 	@Override
 	public void registerItemModel(Item item) 
 	{
-		reactioncraft.proxy.registerItemRenderer(this, 0, "cooked_horse");
+		eactioncraft.proxy.registerItemRenderer(this, 0, "cooked_horse");
 	}
 
 	@Override

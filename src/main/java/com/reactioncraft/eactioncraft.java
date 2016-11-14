@@ -1,28 +1,28 @@
 package com.reactioncraft;
 
-//Vanilla Imports
-import net.minecraft.init.Blocks;
+import com.reactioncraft.api.ExclusionList;
+//Reactioncraft Imports
+import com.reactioncraft.core.CommonProxy;
+import com.reactioncraft.core.common.biomes.BiomeManager;
+import com.reactioncraft.core.common.creativeTab.RCTAB;
+import com.reactioncraft.core.common.creativeTab.RCTAB1;
+import com.reactioncraft.core.common.creativeTab.RCTAB2;
+import com.reactioncraft.integration.IntegratedBlocksRegistry;
+import com.reactioncraft.integration.IntegratedEventRegistry;
+import com.reactioncraft.integration.IntegratedItemRegistry;
+import com.reactioncraft.integration.IntegratedMaterials;
+import com.reactioncraft.integration.IntegratedRecipesRegistry;
 import net.minecraft.creativetab.CreativeTabs;
-
-//Forge - FML Imports
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
-import net.minecraftforge.fml.common.event.*;
+import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-//Reactioncraft Imports
-import com.reactioncraft.core.*;
-import com.reactioncraft.core.common.biomes.BiomeManager;
-import com.reactioncraft.core.common.creativeTab.*;
-import com.reactioncraft.core.common.events.*;
-import com.reactioncraft.integration.*;
-import com.reactioncraft.api.*;
+@Mod(modid = eactioncraft.MODID, name = eactioncraft.name, version = eactioncraft.version, acceptedMinecraftVersions = "[1.10.2]")
 
-@Mod(modid = reactioncraft.MODID, name = reactioncraft.name, version = reactioncraft.version, acceptedMinecraftVersions = "[1.10.2]")
-
-public class reactioncraft
+public class eactioncraft
 {
 	public static final String name = "Reactioncraft 3: Rebirth";
     public static final String MODID = "reactioncraft";
@@ -34,7 +34,7 @@ public class reactioncraft
     
     //Instance
     @Mod.Instance(MODID)
-	public static reactioncraft instance;
+	public static eactioncraft instance;
     
     //Creative Tabs
     public static CreativeTabs ReactioncraftItems = new RCTAB ("ReactioncraftItems");

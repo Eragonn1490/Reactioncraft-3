@@ -1,7 +1,7 @@
 package com.reactioncraft.food.common;
 
 //Reactioncraft
-import com.reactioncraft.reactioncraft;
+import com.reactioncraft.eactioncraft;
 import com.reactioncraft.core.ItemModelProvider;
 import com.reactioncraft.core.OreDictionaryInterface;
 
@@ -18,13 +18,13 @@ public class ItemPork extends ItemFood implements ItemModelProvider, OreDictiona
 		super(3, 0.6f, false);
 		setUnlocalizedName("raw_pork");
 		setRegistryName("raw_pork");
-		setCreativeTab(reactioncraft.Reactioncraftfood);
+		setCreativeTab(eactioncraft.Reactioncraftfood);
 	}
 
 	@Override
 	public void registerItemModel(Item item) 
 	{
-		reactioncraft.proxy.registerItemRenderer(this, 0, "raw_pork");
+		eactioncraft.proxy.registerItemRenderer(this, 0, "raw_pork");
 	}
 
 	@Override

@@ -1,8 +1,5 @@
 package com.reactioncraft.integration;
 
-import net.minecraft.init.Blocks;
-import net.minecraftforge.common.MinecraftForge;
-
 public class IntegratedForgeSettings
 {
     public static void loadAll()

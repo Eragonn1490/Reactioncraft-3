@@ -3,30 +3,17 @@ package com.reactioncraft.net.common;
 import java.util.List;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Sets;
-import com.reactioncraft.reactioncraft;
+import com.reactioncraft.eactioncraft;
 import com.reactioncraft.core.ItemModelProvider;
 import com.reactioncraft.integration.instances.IntegratedItems;
-
-import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemAxe;
-import net.minecraft.item.ItemPickaxe;
-import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
-import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.text.TextFormatting;
-import net.minecraft.world.World;
-import net.minecraftforge.client.event.sound.PlaySoundEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
@@ -55,7 +42,7 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 	{
 		ItemStack net = new ItemStack(IntegratedItems.complete_net);
 		
-		if (entity != null || !reactioncraft.exclusionList.isExcluded(entity) && entity instanceof EntityLiving)
+		if (entity != null || !eactioncraft.exclusionList.isExcluded(entity) && entity instanceof EntityLiving)
 		{
 			if (entity instanceof EntityPlayer)
 			{
@@ -96,11 +83,8 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 		}
 	}
 
-	/**
-	 * allows items to add custom lines of information to the mouseover description
-	 */
 	@Override
-	public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean par4)
+	public void addInformation(ItemStack itemStack, EntityPlayer player, List<String> list, boolean par4)
 	{
 		if (itemStack.getTagCompound() != null)
 		{
@@ -160,6 +144,6 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 	@Override
 	public void registerItemModel(Item item) 
 	{
-		reactioncraft.proxy.registerItemRenderer(this, 0, "complete_Net");
+		eactioncraft.proxy.registerItemRenderer(this, 0, "complete_Net");
 	}
 }

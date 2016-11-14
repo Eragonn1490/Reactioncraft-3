@@ -1,21 +1,21 @@
 package com.reactioncraft.food.common;
 
-//Java
 import javax.annotation.Nullable;
-
-//Reactioncraft
-import com.reactioncraft.reactioncraft;
+import com.reactioncraft.eactioncraft;
 import com.reactioncraft.core.ItemModelProvider;
-
-//Vanilla
-import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
-import net.minecraft.item.*;
+import net.minecraft.item.EnumAction;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemFood;
+import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.stats.StatList;
-import net.minecraft.util.*;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
 public class ItemFoodMod extends ItemFood implements ItemModelProvider
@@ -33,9 +33,9 @@ public class ItemFoodMod extends ItemFood implements ItemModelProvider
     public PotionEffect potionId;
     /** probably of the set potion effect occurring */
     public float potionEffectProbability;
-    
-    public static String name;
-    
+
+    public String name;
+
     public ItemFoodMod(String name, int amount, float saturation, boolean isWolfFood)
     {
     	super(amount, saturation, isWolfFood);
@@ -46,15 +46,9 @@ public class ItemFoodMod extends ItemFood implements ItemModelProvider
         this.name = name;
 		setUnlocalizedName(name);
 		setRegistryName(name);
-        this.setCreativeTab(reactioncraft.Reactioncraftfood);
+        this.setCreativeTab(eactioncraft.Reactioncraftfood);
     }
 
-    public ItemFoodMod(int amount, boolean isWolfFood)
-    {
-        this(name, amount, 0.6F, isWolfFood);
-    }
-    
-    
     /**
      * Called when the player finishes using this Item (E.g. finishes eating.). Not called when the player stops using
      * the Item before the action is complete.
@@ -105,11 +99,11 @@ public class ItemFoodMod extends ItemFood implements ItemModelProvider
         if (playerIn.canEat(this.alwaysEdible))
         {
             playerIn.setActiveHand(hand);
-            return new ActionResult(EnumActionResult.SUCCESS, itemStackIn);
+            return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemStackIn);
         }
         else
         {
-            return new ActionResult(EnumActionResult.FAIL, itemStackIn);
+            return new ActionResult<ItemStack>(EnumActionResult.FAIL, itemStackIn);
         }
     }
 
@@ -149,6 +143,6 @@ public class ItemFoodMod extends ItemFood implements ItemModelProvider
     
     public void registerItemModel(Item item) 
     {
-    	reactioncraft.proxy.registerItemRenderer(this, 0, getUnlocalizedName());
+    	eactioncraft.proxy.registerItemRenderer(this, 0, getUnlocalizedName());
     }
 }

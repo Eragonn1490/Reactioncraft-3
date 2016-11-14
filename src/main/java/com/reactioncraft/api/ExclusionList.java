@@ -3,13 +3,12 @@ package com.reactioncraft.api;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;
 
-public class ExclusionList implements Iterable
+public class ExclusionList implements Iterable<String>
 {
-    public static List<String> list = new ArrayList();
+    public static List<String> list = new ArrayList<String>();
 
     public ExclusionList()
     {
@@ -59,7 +58,7 @@ public class ExclusionList implements Iterable
         return list.contains(EntityList.getEntityString(entity));
     }
 
-    public Iterator iterator()
+    public Iterator<String> iterator()
     {
         return list.iterator();
     }

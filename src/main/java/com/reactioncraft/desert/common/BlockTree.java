@@ -1,10 +1,10 @@
 package com.reactioncraft.desert.common;
 
-import com.google.common.base.Predicate;
 import java.util.List;
 import javax.annotation.Nullable;
-
+import com.google.common.base.Predicate;
 import net.minecraft.block.BlockLog;
+import net.minecraft.block.BlockPlanks;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
