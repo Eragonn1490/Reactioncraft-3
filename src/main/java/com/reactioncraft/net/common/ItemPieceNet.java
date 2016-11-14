@@ -1,7 +1,7 @@
 package com.reactioncraft.net.common;
 
 import java.util.List;
-import com.reactioncraft.eactioncraft;
+import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.core.ItemBase;
 import com.reactioncraft.core.ItemModelProvider;
 import com.reactioncraft.core.OreDictionaryInterface;
@@ -49,6 +49,6 @@ public class ItemPieceNet extends ItemBase implements ItemModelProvider, OreDict
 	@Override
 	public void registerItemModel(Item item) 
 	{
-		eactioncraft.proxy.registerItemRenderer(this, 0, "net");
+		Reactioncraft.proxy.registerItemRenderer(this, 0, "net");
 	}
 }

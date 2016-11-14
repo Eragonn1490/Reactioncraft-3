@@ -2,7 +2,7 @@ package com.reactioncraft.net.common;
 
 import java.util.List;
 import javax.annotation.Nullable;
-import com.reactioncraft.eactioncraft;
+import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.core.ItemBase;
 import com.reactioncraft.core.ItemModelProvider;
 import com.reactioncraft.integration.instances.IntegratedItems;
@@ -33,7 +33,7 @@ public class ItemCaughtEntity extends ItemBase implements ItemModelProvider
     @Override
 	public void registerItemModel(Item item) 
 	{
-		eactioncraft.proxy.registerItemRenderer(this, 0, "caught");
+		Reactioncraft.proxy.registerItemRenderer(this, 0, "caught");
 	}
 
     public String getItemDisplayName(ItemStack itemStack)

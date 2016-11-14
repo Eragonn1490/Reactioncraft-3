@@ -1,6 +1,6 @@
 package com.reactioncraft.core;
 
-import com.reactioncraft.eactioncraft;
+import com.reactioncraft.Reactioncraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 
@@ -17,7 +17,7 @@ public class ItemBase extends Item
 
 	public void registerItemModel() 
 	{
-		eactioncraft.proxy.registerItemRenderer(this, 0, name);
+		Reactioncraft.proxy.registerItemRenderer(this, 0, name);
 	}
 
 	@Override

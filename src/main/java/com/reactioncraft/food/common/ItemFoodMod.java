@@ -1,7 +1,7 @@
 package com.reactioncraft.food.common;
 
 import javax.annotation.Nullable;
-import com.reactioncraft.eactioncraft;
+import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.core.ItemModelProvider;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -46,7 +46,7 @@ public class ItemFoodMod extends ItemFood implements ItemModelProvider
         this.name = name;
 		setUnlocalizedName(name);
 		setRegistryName(name);
-        this.setCreativeTab(eactioncraft.Reactioncraftfood);
+        this.setCreativeTab(Reactioncraft.Reactioncraftfood);
     }
 
     /**
@@ -143,6 +143,6 @@ public class ItemFoodMod extends ItemFood implements ItemModelProvider
     
     public void registerItemModel(Item item) 
     {
-    	eactioncraft.proxy.registerItemRenderer(this, 0, getUnlocalizedName());
+    	Reactioncraft.proxy.registerItemRenderer(this, 0, getUnlocalizedName());
     }
 }

@@ -3,7 +3,7 @@ package com.reactioncraft.net.common;
 import java.util.List;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
-import com.reactioncraft.eactioncraft;
+import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.core.ItemModelProvider;
 import com.reactioncraft.integration.instances.IntegratedItems;
 import net.minecraft.entity.Entity;
@@ -42,7 +42,7 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 	{
 		ItemStack net = new ItemStack(IntegratedItems.complete_net);
 		
-		if (entity != null || !eactioncraft.exclusionList.isExcluded(entity) && entity instanceof EntityLiving)
+		if (entity != null || !Reactioncraft.exclusionList.isExcluded(entity) && entity instanceof EntityLiving)
 		{
 			if (entity instanceof EntityPlayer)
 			{
@@ -144,6 +144,6 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 	@Override
 	public void registerItemModel(Item item) 
 	{
-		eactioncraft.proxy.registerItemRenderer(this, 0, "complete_Net");
+		Reactioncraft.proxy.registerItemRenderer(this, 0, "complete_Net");
 	}
 }
