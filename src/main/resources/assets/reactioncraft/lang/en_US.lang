@@ -1,6 +1,11 @@
 itemGroup.ReactioncraftItems=RC: Items
 itemGroup.Reactioncraft=RC: Blocks
 itemGroup.Reactioncraftfood=RC: Foods
-item.meat_cleaver.name=Meat Cleaver
+
+item.reactioncraft.caught.name=Caught
+item.reactioncraft.complete_net.name=Net
+item.reactioncraft.piece_hilt.name=Hilt Piece
+item.reactioncraft.piece_net.name=Net Piece
+item.reactioncraft.meat_cleaver.name=Meat Cleaver
 item.bones.name=Bones
 item.creative_net.name=Unbreaking Catching Net

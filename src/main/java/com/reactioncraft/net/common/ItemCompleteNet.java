@@ -7,27 +7,28 @@ import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.core.ItemModelProvider;
 import com.reactioncraft.integration.instances.IntegratedItems;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 {
 	public int retunedAmt;
+	protected final String name;
 
-	public ItemCompleteNet(ToolMaterial mat) 
+	public ItemCompleteNet(String name, ToolMaterial mat)
 	{
 		super(mat);
 		//damageVsEntity = 0.0F;
 		//attackSpeed = 0.0F;
-		this.setRegistryName("complete_net");
-		this.setUnlocalizedName("complete_net");
+		this.name = name;
+		this.setRegistryName(new ResourceLocation(Reactioncraft.MODID, name));
+		this.setUnlocalizedName(Reactioncraft.MODID + "." + name);
 		this.setMaxStackSize(1);
 		this.setCreativeTab(null);
 	}
@@ -40,8 +41,6 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity)
 	{
-		ItemStack net = new ItemStack(IntegratedItems.complete_net);
-		
 		if (entity != null || !Reactioncraft.exclusionList.isExcluded(entity) && entity instanceof EntityLiving)
 		{
 			if (entity instanceof EntityPlayer)
@@ -50,21 +49,22 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 			}
 			else
 			{
-				NBTTagCompound entityplayer = new NBTTagCompound();
-				entity.writeToNBT(entityplayer);
-				entityplayer.removeTag("Pos");
-				entityplayer.removeTag("Motion");
-				entityplayer.removeTag("Rotation");
-				entityplayer.removeTag("Dimension");
-				entityplayer.removeTag("PortalCooldown");
-				entityplayer.removeTag("InLove");
-				entityplayer.removeTag("HurtTime");
-				entityplayer.removeTag("DeathTime");
-				entityplayer.removeTag("AttackTime");
+				NBTTagCompound entityTag = new NBTTagCompound();
+				entity.writeToNBTOptional(entityTag);
+				entityTag.removeTag("Pos");
+				entityTag.removeTag("Motion");
+				entityTag.removeTag("Rotation");
+				entityTag.removeTag("Dimension");
+				entityTag.removeTag("PortalCooldown");
+				entityTag.removeTag("InLove");
+				entityTag.removeTag("HurtTime");
+				entityTag.removeTag("DeathTime");
+				entityTag.removeTag("AttackTime");
+
 				ItemStack is = new ItemStack(IntegratedItems.caught);
-				is.setTagCompound(new NBTTagCompound());
-				is.getTagCompound().setString("entity", EntityList.getEntityString(entity));
-				is.getTagCompound().setTag("entityData", entityplayer);
+				NBTTagCompound nbt = new NBTTagCompound();
+				nbt.setTag("EntityData", entityTag);
+				is.setTagCompound(nbt);
 				player.dropItem(is, true);
 				stack.damageItem(1, player);
 				entity.setDead();
@@ -141,9 +141,9 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 		}
 	}
 
-	@Override
-	public void registerItemModel(Item item) 
-	{
-		Reactioncraft.proxy.registerItemRenderer(this, 0, "complete_Net");
-	}
+    @Override
+    public void registerItemModel()
+    {
+        Reactioncraft.proxy.registerItemRenderer(this, 0, this.name);
+    }
 }

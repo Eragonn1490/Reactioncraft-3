@@ -7,7 +7,6 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.EnumAction;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
@@ -140,9 +139,10 @@ public class ItemFoodMod extends ItemFood implements ItemModelProvider
         this.alwaysEdible = true;
         return this;
     }
-    
-    public void registerItemModel(Item item) 
+
+    @Override
+    public void registerItemModel() 
     {
-    	Reactioncraft.proxy.registerItemRenderer(this, 0, getUnlocalizedName());
+    	Reactioncraft.proxy.registerItemRenderer(this, 0, this.name);
     }
 }

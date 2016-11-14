@@ -1,6 +1,6 @@
 {
-    "parent": "item/generated",
+    "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "reactioncraft:item/beef_chunk"
+        "layer0": "reactioncraft:items/beef_chunk"
     }
 }
