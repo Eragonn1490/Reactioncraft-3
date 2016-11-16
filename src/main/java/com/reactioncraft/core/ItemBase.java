@@ -1,23 +1,25 @@
 package com.reactioncraft.core;
 
-import com.reactioncraft.reactioncraft;
+import com.reactioncraft.Reactioncraft;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
 
-public class ItemBase extends Item 
+public class ItemBase extends Item implements ItemModelProvider
 {
 	protected String name;
 
 	public ItemBase(String name) 
 	{
 		this.name = name;
-		setUnlocalizedName(name);
-		setRegistryName(name);
+		this.setRegistryName(new ResourceLocation(Reactioncraft.MODID, name));
+		this.setUnlocalizedName(Reactioncraft.MODID + "." + this.name);
 	}
 
+	@Override
 	public void registerItemModel() 
 	{
-		reactioncraft.proxy.registerItemRenderer(this, 0, name);
+		Reactioncraft.proxy.registerItemRenderer(this, 0, this.name);
 	}
 
 	@Override

@@ -1,8 +1,7 @@
 package com.reactioncraft.integration;
 
-import net.minecraft.item.Item;
 import net.minecraft.item.Item.ToolMaterial;
-import net.minecraftforge.common.util.*;
+import net.minecraftforge.common.util.EnumHelper;
 
 public class IntegratedMaterials
 {

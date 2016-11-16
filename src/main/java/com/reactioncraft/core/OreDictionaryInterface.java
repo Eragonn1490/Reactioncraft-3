@@ -1,6 +1,8 @@
 package com.reactioncraft.core;
 
+import net.minecraft.item.Item;
+
 public interface OreDictionaryInterface 
 {
-	void initOreDict();
+	void initOreDict(String key, Item item);
 }

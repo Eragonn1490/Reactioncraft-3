@@ -1,6 +1,6 @@
 {
-    "parent": "item/generated",
+    "parent": "minecraft:item/generated",
     "textures": {
-        "layer0": "reactioncraft:item/chicken_head"
+        "layer0": "reactioncraft:items/chicken_head"
     }
 }

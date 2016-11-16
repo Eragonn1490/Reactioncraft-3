@@ -1,10 +1,6 @@
 package com.reactioncraft.core;
 
-import com.reactioncraft.core.CommonProxy;
-//import Reactioncraft.mobs.common.*;
-//import Reactioncraft.net.Common.EntityPlayerClone;
-import net.minecraftforge.fml.common.SidedProxy;
-import com.reactioncraft.reactioncraft;
+import com.reactioncraft.Reactioncraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
@@ -12,14 +8,15 @@ import net.minecraftforge.client.model.ModelLoader;
 public class ClientProxy extends CommonProxy
 {
     public static String BORE_TEXTURE = "/mods/reactioncraft/textures/railcraft/";
-    
+
     @Override
     public void registerItemRenderer(Item item, int meta, String id) 
     {
-    	ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(reactioncraft.MODID + ":" + id, "inventory"));
+    	ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(Reactioncraft.MODID + ":" + id, "inventory"));
     }
-    
-    public static void registerRenderInformation()
+
+    @Override
+    public void registerRenderInformation()
     {
     	/**
         RenderingRegistry.registerEntityRenderingHandler(EntityBee.class, new RenderBee(new ModelBee(0.2F), 0.2F, 0.2F));
