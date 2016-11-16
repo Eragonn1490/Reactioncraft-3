@@ -1,7 +1,7 @@
 {
     "parent": "item/handheld",
     "textures": {
-        "layer0": "reactioncraft:items/fullnet"
+        "layer0": "reactioncraft:items/tools/complete_net"
     },
     "display": {
         "thirdperson": {

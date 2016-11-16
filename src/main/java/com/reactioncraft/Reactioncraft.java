@@ -1,8 +1,10 @@
 package com.reactioncraft;
 
+
 import com.reactioncraft.api.ExclusionList;
 //Reactioncraft Imports
 import com.reactioncraft.core.CommonProxy;
+import com.reactioncraft.core.Remapper;
 import com.reactioncraft.core.common.biomes.BiomeManager;
 import com.reactioncraft.core.common.creativeTab.RCTAB;
 import com.reactioncraft.core.common.creativeTab.RCTAB1;
@@ -15,8 +17,10 @@ import com.reactioncraft.integration.IntegratedRecipesRegistry;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraftforge.fml.common.FMLLog;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
+import net.minecraftforge.fml.common.event.FMLMissingMappingsEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
@@ -67,4 +71,10 @@ public class Reactioncraft
     {
     	FMLLog.info("Looks like Reactioncraft Has Fully Loaded!", new Object[0]);
     }
+    
+    @EventHandler
+	public void missingMappings(FMLMissingMappingsEvent event) 
+    {
+		Remapper.remap(event.get());
+	}
 }

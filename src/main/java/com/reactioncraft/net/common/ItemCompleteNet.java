@@ -19,6 +19,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 {
 	public int retunedAmt;
+	public int myReturnedAmt;
 	protected final String name;
 
 	public ItemCompleteNet(String name, ToolMaterial mat)
@@ -83,34 +84,14 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 		}
 	}
 
-	@Override
-	public void addInformation(ItemStack itemStack, EntityPlayer player, List<String> list, boolean par4)
-	{
-		if (itemStack.getTagCompound() != null)
-		{
-			list.add("Hilt: " + itemStack.getTagCompound().getInteger("hilt"));
-			list.add("Net: " + itemStack.getTagCompound().getInteger("net"));
-		}
-		else
-		{
-			if(itemStack.getTagCompound() != null)
-			{
-				list.add("Hilt: " + itemStack.getTagCompound().getInteger("hilt"));
-				list.add("Net: " + itemStack.getTagCompound().getInteger("net"));
-			}
-		}
-		super.addInformation(itemStack, player, list, par4);
-	}
-
-
 	/**
-	 * Returns True is the item is renderer in full 3D when hold.
-	 */
-	@SideOnly(Side.CLIENT)
-	public boolean isFull3D()
-	{
-		return true;
-	}
+     * Returns True is the item is renderer in full 3D when hold.
+     */
+    @SideOnly(Side.CLIENT)
+    public boolean isFull3D()
+    {
+        return true;
+    }
 
 	/**
 	 * Returns true if this item should be rotated by 180 degrees around the Y axis when being held in an entities
@@ -120,7 +101,7 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 	@Override
 	public boolean shouldRotateAroundWhenRendering()
 	{
-		return false;
+		return true;
 	}
 	
 	@Override
@@ -132,6 +113,7 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 			int e = compound.getInteger("hilt");
 			int netLevel = compound.getInteger("net");
 			retunedAmt = (e * 10 + netLevel * 10);
+			myReturnedAmt = retunedAmt;
 			return retunedAmt;
 		}
 		catch (NullPointerException var5)
@@ -141,6 +123,27 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 		}
 	}
 
+	@Override
+	public void addInformation(ItemStack itemStack, EntityPlayer player, List<String> list, boolean par4)
+	{
+		if (itemStack.getTagCompound() != null)
+		{
+			list.add("Hilt: " + itemStack.getTagCompound().getInteger("str1"));
+			list.add("Net: "  + itemStack.getTagCompound().getInteger("str2"));
+			list.add("Uses: " + myReturnedAmt);
+		}
+		else
+		{
+			if(itemStack.getTagCompound() != null)
+			{
+				list.add("Hilt: " + itemStack.getTagCompound().getInteger("str1"));
+				list.add("Net: "  + itemStack.getTagCompound().getInteger("str2"));
+				list.add("Uses: " + myReturnedAmt);
+			}
+		}
+		super.addInformation(itemStack, player, list, par4);
+	}
+	
     @Override
     public void registerItemModel()
     {

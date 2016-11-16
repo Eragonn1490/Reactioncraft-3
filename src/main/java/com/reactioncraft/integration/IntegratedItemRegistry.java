@@ -1,14 +1,11 @@
 package com.reactioncraft.integration;
 
 import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.core.ItemBase;
-import com.reactioncraft.core.ItemModelProvider;
-import com.reactioncraft.food.common.ItemFoodBase;
-import com.reactioncraft.integration.instances.IntegratedItems;
-import com.reactioncraft.net.common.ItemCaughtEntity;
-import com.reactioncraft.net.common.ItemCompleteNet;
-import com.reactioncraft.net.common.ItemPieceHilt;
-import com.reactioncraft.net.common.ItemPieceNet;
+import com.reactioncraft.core.*;
+import com.reactioncraft.core.common.ItemBaseSword;
+import com.reactioncraft.food.common.*;
+import com.reactioncraft.integration.instances.*;
+import com.reactioncraft.net.common.*;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -19,11 +16,11 @@ public class IntegratedItemRegistry
     public static void init() 
     {
         //Food Related Weapons
-        IntegratedItems.meat_cleaver = register(new ItemBase("meat_cleaver")  .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.Knfie        = register(new ItemBase("Knfie")         .setCreativeTab(Reactioncraft.ReactioncraftItems));
-
+        IntegratedItems.meat_cleaver = register(new ItemBase("meat_cleaver")              .setCreativeTab(Reactioncraft.ReactioncraftItems));
+        IntegratedItems.Knife        = (ItemBaseSword) register(new ItemKnife("Knfie")    .setCreativeTab(Reactioncraft.ReactioncraftItems));
+ 
         //Bone Drop
-        IntegratedItems.bones         = register(new ItemBase("bones")        .setCreativeTab(Reactioncraft.ReactioncraftItems));
+        IntegratedItems.bones         = register(new ItemBase("bones")                    .setCreativeTab(Reactioncraft.ReactioncraftItems));
 
         //Modified Food Drops
         IntegratedItems.raw_human       = register(new ItemFoodBase("raw_human",    3, 0.6f, false));
@@ -32,7 +29,7 @@ public class IntegratedItemRegistry
         IntegratedItems.cooked_lamb     = register(new ItemFoodBase("cooked_lamb",  8, 0.8f, false));
         IntegratedItems.raw_horse       = register(new ItemFoodBase("raw_horse",    3, 0.6f, false));
         IntegratedItems.cooked_horse    = register(new ItemFoodBase("cooked_horse", 4, 0.8f, false));
-        IntegratedItems.chicken_head    = register(new ItemFoodBase("chicken_head", 3, 0.6f, false));
+        IntegratedItems.chicken_head    = register(new ItemchickenHead("chicken_head", 3, 0.6f, false));
         IntegratedItems.beef_chunk      = register(new ItemFoodBase("raw_beef",     3, 0.6f, false));
         IntegratedItems.pork_chunk      = register(new ItemFoodBase("raw_pork",     3, 0.6f, false));
 
@@ -65,10 +62,10 @@ public class IntegratedItemRegistry
         IntegratedItems.hilt         = register(new ItemPieceHilt("piece_hilt")       .setCreativeTab(null));
         IntegratedItems.net          = register(new ItemPieceNet("piece_net")         .setCreativeTab(null));
         IntegratedItems.complete_net = register(new ItemCompleteNet("complete_net", IntegratedMaterials.EnumToolMaterialNet));
-        IntegratedItems.caught       = register(new ItemCaughtEntity("caught").setCreativeTab(null));
-        IntegratedItems.caughtplayer = register(new ItemBase("caught_player")   .setCreativeTab(null));
-        IntegratedItems.creativeNet  = register(new ItemBase("creative_net")    .setCreativeTab(Reactioncraft.ReactioncraftItems));
-
+        IntegratedItems.caught       = register(new ItemCaughtEntity("caught")        .setCreativeTab(null));
+        IntegratedItems.caughtplayer = register(new ItemBase("caught_player")         .setCreativeTab(null));
+        IntegratedItems.creativeNet  = register(new ItemBase("creative_net")          .setCreativeTab(Reactioncraft.ReactioncraftItems));
+ 
         //Desert Items
         IntegratedItems.SandStonePaste  = register(new ItemBase("SandStonePaste")     .setCreativeTab(Reactioncraft.ReactioncraftItems));
         IntegratedItems.UncutLBGem      = register(new ItemBase("UncutLBGem")         .setCreativeTab(Reactioncraft.ReactioncraftItems));
@@ -187,16 +184,6 @@ public class IntegratedItemRegistry
         //Foods
         registerRender(IntegratedItems.raw_human);
     }
-
-    /*private static Item registerItemFood(String registryName, int amount, float sat, boolean isWolfFood) 
-    {
-        Item item = new ItemFood(amount, sat, isWolfFood);
-        item.setCreativeTab(Reactioncraft.Reactioncraftfood);
-        item.setRegistryName(registryName);
-        item.setUnlocalizedName(registryName);
-
-        return GameRegistry.register(item);
-    }*/
 
     private static void registerRender(Item item) 
     {

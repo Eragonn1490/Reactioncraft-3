@@ -1,9 +1,10 @@
 package com.reactioncraft.integration.instances;
 
 import com.reactioncraft.core.ItemBase;
-import com.reactioncraft.food.common.ItemFoodBase;
-import com.reactioncraft.net.common.ItemCompleteNet;
-import net.minecraft.item.Item;
+import com.reactioncraft.core.common.*;
+import com.reactioncraft.food.common.*;
+import com.reactioncraft.net.common.*;
+import net.minecraft.item.*;
 
 public class IntegratedItems
 {
@@ -11,7 +12,7 @@ public class IntegratedItems
 	
 	//Food Weapons
 	public static ItemBase meat_cleaver;
-	public static ItemBase Knfie;
+	public static ItemBaseSword Knife;
 	
 	//Food Drops
 	public static ItemFoodBase raw_human;
