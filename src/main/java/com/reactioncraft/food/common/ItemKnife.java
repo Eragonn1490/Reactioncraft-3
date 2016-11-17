@@ -1,6 +1,6 @@
 package com.reactioncraft.food.common;
 
-import com.reactioncraft.Reactioncraft;
+import com.reactioncraft.reactioncraft;
 
 import net.minecraft.item.ItemSword;
 
@@ -11,7 +11,7 @@ public class ItemKnife extends ItemSword
         super(ToolMaterial.WOOD);
         this.setMaxStackSize(1);
         this.setMaxDamage(25);
-        this.setCreativeTab(Reactioncraft.ReactioncraftItems);
+        this.setCreativeTab(reactioncraft.ReactioncraftItems);
         this.setNoRepair();
     }
 

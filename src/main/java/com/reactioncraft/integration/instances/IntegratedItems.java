@@ -1,8 +1,8 @@
 package com.reactioncraft.integration.instances;
 
-import com.reactioncraft.core.ItemBase;
-import com.reactioncraft.food.common.ItemFoodBase;
-import com.reactioncraft.net.common.ItemCompleteNet;
+import com.reactioncraft.core.common.items.*;
+import com.reactioncraft.net.common.*;
+import com.reactioncraft.tools.common.*;
 import net.minecraft.item.Item;
 
 public class IntegratedItems
@@ -153,19 +153,19 @@ public class IntegratedItems
     public static ItemBase bloodstoneboots;
     
     //Weapons
-    public static ItemBase ObbySword;
-    public static ItemBase ObbyPick;
-    public static ItemBase ObbyShovel;
-    public static ItemBase ObbyAxe;
-    public static ItemBase ObbyHoe;
-    public static ItemBase BloodstoneSword;
-    public static ItemBase BloodstonePick;
-    public static ItemBase BloodstoneShovel;
-    public static ItemBase BloodstoneAxe;
-    public static ItemBase BloodstoneHoe;
+    public static ItemObsidanSword ObbySword;
+    public static ItemObsidanPick ObbyPick;
+    public static ItemObsidianShovel ObbyShovel;
+    public static ItemObsidianAxe ObbyAxe;
+    public static ItemObsidianHoe ObbyHoe;
+    public static ItemBloodstoneSword BloodstoneSword;
+    public static ItemBloodstonePick BloodstonePick;
+    public static ItemBloodstoneShovel BloodstoneShovel;
+    public static ItemBloodstoneAxe BloodstoneAxe;
+    public static ItemBloodstoneHoe BloodstoneHoe;
     public static ItemBase BloodstoneBlade;
     public static ItemBase GoldenSwordFragment;
     public static ItemBase UnbindedSword;
-    public static ItemBase BloodstoneDiamondPick;
+    public static ItemBlackdiamondPick BloodstoneDiamondPick;
     public static ItemBase Bat;
 }

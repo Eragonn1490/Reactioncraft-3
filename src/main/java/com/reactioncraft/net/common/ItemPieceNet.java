@@ -1,7 +1,9 @@
 package com.reactioncraft.net.common;
 
 import java.util.List;
-import com.reactioncraft.core.ItemBase;
+
+import com.reactioncraft.core.common.items.ItemBase;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;

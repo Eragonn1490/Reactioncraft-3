@@ -20,9 +20,9 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = Reactioncraft.MODID, name = Reactioncraft.name, version = Reactioncraft.version, acceptedMinecraftVersions = "[1.10.2]")
+@Mod(modid = reactioncraft.MODID, name = reactioncraft.name, version = reactioncraft.version, acceptedMinecraftVersions = "[1.10.2]")
 
-public class Reactioncraft
+public class reactioncraft
 {
 	public static final String name = "Reactioncraft 3: Rebirth";
     public static final String MODID = "reactioncraft";
@@ -34,7 +34,7 @@ public class Reactioncraft
     
     //Instance
     @Mod.Instance(MODID)
-	public static Reactioncraft instance;
+	public static reactioncraft instance;
     
     //Creative Tabs
     public static CreativeTabs ReactioncraftItems = new RCTAB ("ReactioncraftItems");

@@ -2,7 +2,9 @@ package com.reactioncraft.net.common;
 
 import java.util.List;
 import javax.annotation.Nullable;
-import com.reactioncraft.core.ItemBase;
+
+import com.reactioncraft.core.common.items.ItemBase;
+
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityList;

@@ -1,6 +1,6 @@
 package com.reactioncraft.integration.instances;
 
-import com.reactioncraft.core.BlockBase;
+import com.reactioncraft.core.common.blocks.BlockBase;
 import com.reactioncraft.desert.common.BlockTree;
 
 
