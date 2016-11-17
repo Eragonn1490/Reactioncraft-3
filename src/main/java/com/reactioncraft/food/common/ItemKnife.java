@@ -1,14 +1,19 @@
 package com.reactioncraft.food.common;
 
+<<<<<<< HEAD
 import com.reactioncraft.reactioncraft;
+=======
+import com.reactioncraft.Reactioncraft;
+import com.reactioncraft.core.common.ItemBaseSword;
+>>>>>>> refs/remotes/origin/master
 
 import net.minecraft.item.ItemSword;
 
-public class ItemKnife extends ItemSword
+public class ItemKnife extends ItemBaseSword
 {
-    public ItemKnife(int par1)
+    public ItemKnife(String string)
     {
-        super(ToolMaterial.WOOD);
+        super(string, ToolMaterial.IRON);
         this.setMaxStackSize(1);
         this.setMaxDamage(25);
         this.setCreativeTab(reactioncraft.ReactioncraftItems);
