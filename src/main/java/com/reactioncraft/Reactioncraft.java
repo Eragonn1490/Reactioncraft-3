@@ -75,6 +75,6 @@ public class reactioncraft
     @EventHandler
 	public void missingMappings(FMLMissingMappingsEvent event) 
     {
-		Remapper.remap(event.get());
+		//Remapper.remap(event.get());
 	}
 }

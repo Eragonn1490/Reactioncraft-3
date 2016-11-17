@@ -1,11 +1,8 @@
 package com.reactioncraft.food.common;
 
-<<<<<<< HEAD
+
 import com.reactioncraft.reactioncraft;
-=======
-import com.reactioncraft.Reactioncraft;
 import com.reactioncraft.core.common.ItemBaseSword;
->>>>>>> refs/remotes/origin/master
 
 import net.minecraft.item.ItemSword;
 
