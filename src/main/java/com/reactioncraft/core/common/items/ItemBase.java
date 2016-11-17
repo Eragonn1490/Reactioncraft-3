@@ -1,6 +1,8 @@
-package com.reactioncraft.core;
+package com.reactioncraft.core.common.items;
 
-import com.reactioncraft.Reactioncraft;
+import com.reactioncraft.reactioncraft;
+import com.reactioncraft.core.ItemModelProvider;
+
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
 import net.minecraft.util.ResourceLocation;
@@ -12,14 +14,14 @@ public class ItemBase extends Item implements ItemModelProvider
 	public ItemBase(String name) 
 	{
 		this.name = name;
-		this.setRegistryName(new ResourceLocation(Reactioncraft.MODID, name));
-		this.setUnlocalizedName(Reactioncraft.MODID + "." + this.name);
+		this.setRegistryName(new ResourceLocation(reactioncraft.MODID, name));
+		this.setUnlocalizedName(reactioncraft.MODID + "." + this.name);
 	}
 
 	@Override
 	public void registerItemModel() 
 	{
-		Reactioncraft.proxy.registerItemRenderer(this, 0, this.name);
+		reactioncraft.proxy.registerItemRenderer(this, 0, this.name);
 	}
 
 	@Override

@@ -1,7 +1,7 @@
 package com.reactioncraft.integration;
 
-import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.core.BlockBase;
+import com.reactioncraft.reactioncraft;
+import com.reactioncraft.core.common.blocks.BlockBase;
 import com.reactioncraft.integration.instances.IntegratedBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -13,11 +13,11 @@ public class IntegratedBlocksRegistry
 	public static void init() 
 	{
 		//Brick Blocks
-		IntegratedBlocks.bloodstonebricks = register(new BlockBase(Material.ROCK, "bloodstonebricks").setCreativeTab(Reactioncraft.Reactioncraft));
+		IntegratedBlocks.bloodstonebricks = register(new BlockBase(Material.ROCK, "bloodstonebricks").setCreativeTab(reactioncraft.Reactioncraft));
 		
 		
 		//Wooden Blocks
-		IntegratedBlocks.CherryPlanks = register(new BlockBase(Material.WOOD, "CherryPlanks").setCreativeTab(Reactioncraft.Reactioncraft));
+		IntegratedBlocks.CherryPlanks = register(new BlockBase(Material.WOOD, "CherryPlanks").setCreativeTab(reactioncraft.Reactioncraft));
 		//IntegratedBlocks.Cherrywood   = register(new BlockTree());
 	}
 	

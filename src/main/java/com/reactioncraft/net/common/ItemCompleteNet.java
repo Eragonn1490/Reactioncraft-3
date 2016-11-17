@@ -3,7 +3,7 @@ package com.reactioncraft.net.common;
 import java.util.List;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
-import com.reactioncraft.Reactioncraft;
+import com.reactioncraft.reactioncraft;
 import com.reactioncraft.core.ItemModelProvider;
 import com.reactioncraft.integration.instances.IntegratedItems;
 import net.minecraft.entity.Entity;
@@ -28,8 +28,8 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 		//damageVsEntity = 0.0F;
 		//attackSpeed = 0.0F;
 		this.name = name;
-		this.setRegistryName(new ResourceLocation(Reactioncraft.MODID, name));
-		this.setUnlocalizedName(Reactioncraft.MODID + "." + name);
+		this.setRegistryName(new ResourceLocation(reactioncraft.MODID, name));
+		this.setUnlocalizedName(reactioncraft.MODID + "." + name);
 		this.setMaxStackSize(1);
 		this.setCreativeTab(null);
 	}
@@ -42,7 +42,7 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity)
 	{
-		if (entity != null || !Reactioncraft.exclusionList.isExcluded(entity) && entity instanceof EntityLiving)
+		if (entity != null || !reactioncraft.exclusionList.isExcluded(entity) && entity instanceof EntityLiving)
 		{
 			if (entity instanceof EntityPlayer)
 			{
@@ -147,6 +147,6 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
     @Override
     public void registerItemModel()
     {
-        Reactioncraft.proxy.registerItemRenderer(this, 0, this.name);
+        reactioncraft.proxy.registerItemRenderer(this, 0, this.name);
     }
 }

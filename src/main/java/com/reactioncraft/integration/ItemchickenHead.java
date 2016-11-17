@@ -1,6 +1,6 @@
 package com.reactioncraft.integration;
 
-import com.reactioncraft.food.common.ItemFoodBase;
+import com.reactioncraft.core.common.items.ItemFoodBase;
 
 public class ItemchickenHead extends ItemFoodBase 
 {

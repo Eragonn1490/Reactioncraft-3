@@ -1,26 +1,30 @@
 package com.reactioncraft.integration;
 
-import com.reactioncraft.Reactioncraft;
-import com.reactioncraft.core.*;
+import com.reactioncraft.reactioncraft;
+import com.reactioncraft.core.ItemModelProvider;
 import com.reactioncraft.core.common.ItemBaseSword;
-import com.reactioncraft.food.common.*;
-import com.reactioncraft.integration.instances.*;
+import com.reactioncraft.core.common.items.*;
+import com.reactioncraft.integration.instances.IntegratedItems;
 import com.reactioncraft.net.common.*;
+import com.reactioncraft.tools.common.*;
+
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+
 
 public class IntegratedItemRegistry 
 {
     public static void init() 
     {
         //Food Related Weapons
-        IntegratedItems.meat_cleaver = register(new ItemBase("meat_cleaver")              .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.Knife        = (ItemBaseSword) register(new ItemKnife("Knfie")    .setCreativeTab(Reactioncraft.ReactioncraftItems));
- 
+        IntegratedItems.meat_cleaver = register(new ItemBase("meat_cleaver")  .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.Knife        = (ItemBaseSword) register(new ItemBaseSword("Knfie", IntegratedMaterials.EnumToolMaterialMeatcleaver)         .setCreativeTab(reactioncraft.ReactioncraftItems));
+
         //Bone Drop
-        IntegratedItems.bones         = register(new ItemBase("bones")                    .setCreativeTab(Reactioncraft.ReactioncraftItems));
+        IntegratedItems.bones         = register(new ItemBase("bones")        .setCreativeTab(reactioncraft.ReactioncraftItems));
+
 
         //Modified Food Drops
         IntegratedItems.raw_human       = register(new ItemFoodBase("raw_human",    3, 0.6f, false));
@@ -34,163 +38,157 @@ public class IntegratedItemRegistry
         IntegratedItems.pork_chunk      = register(new ItemFoodBase("raw_pork",     3, 0.6f, false));
 
         //Food Items
-        IntegratedItems.AncientFruit       = register(new ItemBase("AncientFruit")      .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.EdibleFlesh        = register(new ItemBase("EdibleFlesh")       .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.cookedCorn         = register(new ItemBase("cookedCorn")        .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.popcornseeds       = register(new ItemBase("popcornseeds")      .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.bagofpopcorn       = register(new ItemBase("bagofpopcorn")      .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.poppedbagofpopcorn = register(new ItemBase("poppedbagofpopcorn").setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.UnwrappedCorn      = register(new ItemBase("UnwrappedCorn")     .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.rawcorn            = register(new ItemBase("rawcorn")           .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.ChickenNuggets     = register(new ItemBase("ChickenNuggets")    .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.RawNuggets         = register(new ItemBase("RawNuggets")        .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.SlicedBread        = register(new ItemBase("SlicedBread")       .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.HamSandwich        = register(new ItemBase("HamSandwich")       .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.Hamburger          = register(new ItemBase("Hamburger")         .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.Cheeseburger       = register(new ItemBase("Cheeseburger")      .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.Bacon              = register(new ItemBase("Bacon")             .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.BaconRaw           = register(new ItemBase("BaconRaw")          .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.cheese             = register(new ItemBase("cheese")            .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.churn              = register(new ItemBase("churn")             .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.buns               = register(new ItemBase("buns")              .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.SamonRaw           = register(new ItemBase("SamonRaw")          .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.Samon              = register(new ItemBase("Samon")             .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.YellowTailRaw      = register(new ItemBase("YellowTailRaw")     .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.SandStonePaste     = register(new ItemBase("YellowTailCooked")  .setCreativeTab(Reactioncraft.ReactioncraftItems));
+        IntegratedItems.AncientFruit       = register(new ItemBase("AncientFruit")      .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.EdibleFlesh        = register(new ItemBase("EdibleFlesh")       .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.cookedCorn         = register(new ItemBase("cookedCorn")        .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.popcornseeds       = register(new ItemBase("popcornseeds")      .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.bagofpopcorn       = register(new ItemBase("bagofpopcorn")      .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.poppedbagofpopcorn = register(new ItemBase("poppedbagofpopcorn").setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.UnwrappedCorn      = register(new ItemBase("UnwrappedCorn")     .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.rawcorn            = register(new ItemBase("rawcorn")           .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.ChickenNuggets     = register(new ItemBase("ChickenNuggets")    .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.RawNuggets         = register(new ItemBase("RawNuggets")        .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.SlicedBread        = register(new ItemBase("SlicedBread")       .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.HamSandwich        = register(new ItemBase("HamSandwich")       .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.Hamburger          = register(new ItemBase("Hamburger")         .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.Cheeseburger       = register(new ItemBase("Cheeseburger")      .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.Bacon              = register(new ItemBase("Bacon")             .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.BaconRaw           = register(new ItemBase("BaconRaw")          .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.cheese             = register(new ItemBase("cheese")            .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.churn              = register(new ItemBase("churn")             .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.buns               = register(new ItemBase("buns")              .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.SamonRaw           = register(new ItemBase("SamonRaw")          .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.Samon              = register(new ItemBase("Samon")             .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.YellowTailRaw      = register(new ItemBase("YellowTailRaw")     .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.SandStonePaste     = register(new ItemBase("YellowTailCooked")  .setCreativeTab(reactioncraft.ReactioncraftItems));
 
         //Net Items
         IntegratedItems.hilt         = register(new ItemPieceHilt("piece_hilt")       .setCreativeTab(null));
         IntegratedItems.net          = register(new ItemPieceNet("piece_net")         .setCreativeTab(null));
         IntegratedItems.complete_net = register(new ItemCompleteNet("complete_net", IntegratedMaterials.EnumToolMaterialNet));
-        IntegratedItems.caught       = register(new ItemCaughtEntity("caught")        .setCreativeTab(null));
-        IntegratedItems.caughtplayer = register(new ItemBase("caught_player")         .setCreativeTab(null));
-        IntegratedItems.creativeNet  = register(new ItemBase("creative_net")          .setCreativeTab(Reactioncraft.ReactioncraftItems));
- 
+
         //Desert Items
-        IntegratedItems.SandStonePaste  = register(new ItemBase("SandStonePaste")     .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.UncutLBGem      = register(new ItemBase("UncutLBGem")         .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.CutLBGem        = register(new ItemBase("CutLBGem")           .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.UncutDBGem      = register(new ItemBase("UncutDBGem")         .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.CutDBGem        = register(new ItemBase("CutDBGem")           .setCreativeTab(Reactioncraft.ReactioncraftItems));
+        IntegratedItems.SandStonePaste  = register(new ItemBase("SandStonePaste")     .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.UncutLBGem      = register(new ItemBase("UncutLBGem")         .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.CutLBGem        = register(new ItemBase("CutLBGem")           .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.UncutDBGem      = register(new ItemBase("UncutDBGem")         .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.CutDBGem        = register(new ItemBase("CutDBGem")           .setCreativeTab(reactioncraft.ReactioncraftItems));
         //Make The Scroll Act as a Book...Eventually
-        IntegratedItems.scroll          = register(new ItemBase("scroll")             .setCreativeTab(Reactioncraft.ReactioncraftItems));
+        IntegratedItems.scroll          = register(new ItemBase("scroll")             .setCreativeTab(reactioncraft.ReactioncraftItems));
 
         //Special Tools
-        IntegratedItems.Hammer            = register(new ItemBase("Hammer")              .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.bloodstoneHammer  = register(new ItemBase("bloodstoneHammer")    .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.GoldChisel        = register(new ItemBase("GoldChisel")          .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.FlintChisel       = register(new ItemBase("FlintChisel")         .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.DiamondChisel     = register(new ItemBase("DiamondChisel")       .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.BloodstoneChisel  = register(new ItemBase("BloodstoneChisel")    .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.CopperChisel      = register(new ItemBase("CopperChisel")        .setCreativeTab(Reactioncraft.ReactioncraftItems));
+        IntegratedItems.Hammer            = register(new ItemBase("Hammer")              .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.bloodstoneHammer  = register(new ItemBase("bloodstoneHammer")    .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.GoldChisel        = register(new ItemBase("GoldChisel")          .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.FlintChisel       = register(new ItemBase("FlintChisel")         .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.DiamondChisel     = register(new ItemBase("DiamondChisel")       .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.BloodstoneChisel  = register(new ItemBase("BloodstoneChisel")    .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.CopperChisel      = register(new ItemBase("CopperChisel")        .setCreativeTab(reactioncraft.ReactioncraftItems));
 
         //Misc Items
-        IntegratedItems.ChainLoop             = register(new ItemBase("ChainLoop")           .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.bloodstoneclump       = register(new ItemBase("bloodstoneclump")     .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.goldrod               = register(new ItemBase("goldrod")             .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.obsidianingot         = register(new ItemBase("obsidianingot")       .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.ingotbloodstone       = register(new ItemBase("ingotbloodstone")     .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.ingotsilver           = register(new ItemBase("ingotsilver")         .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.bloodstonedust        = register(new ItemBase("bloodstonedust")      .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.blackdiamond          = register(new ItemBase("blackdiamond")        .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.dragonstoneshard      = register(new ItemBase("dragonstoneshard")    .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.irondust              = register(new ItemBase("irondust")            .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.gemdragonstone        = register(new ItemBase("gemdragonstone")      .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.superheatedironingot  = register(new ItemBase("superheatedironingot").setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.goldDust              = register(new ItemBase("goldDust")            .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.moltenglass           = register(new ItemBase("moltenglass")         .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.IceBucket             = register(new ItemBase("IceBucket")           .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.ObsidianBucket        = register(new ItemBase("ObsidianBucket")      .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.Mapinabottle          = register(new ItemBase("Mapinabottle")        .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.Shipinabottle         = register(new ItemBase("Shipinabottle")       .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.rcendereye            = register(new ItemBase("rcendereye")          .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.WoodenBookcasedoor    = register(new ItemBase("WoodenBookcasedoor")  .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.IronBookcasedoor      = register(new ItemBase("IronBookcasedoor")    .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.AncientFlower         = register(new ItemBase("AncientFlower")       .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.Wrappedcorn           = register(new ItemBase("Wrappedcorn")         .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.AncientSeeds          = register(new ItemBase("AncientSeeds")        .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.sugarcaneItemBase     = register(new ItemBase("sugarcaneItemBase")   .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.CornSeed              = register(new ItemBase("CornSeed")            .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.stalksItemBase        = register(new ItemBase("stalksItemBase")      .setCreativeTab(Reactioncraft.ReactioncraftItems));
+        IntegratedItems.ChainLoop             = register(new ItemBase("ChainLoop")           .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.bloodstoneclump       = register(new ItemBase("bloodstoneclump")     .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.goldrod               = register(new ItemBase("goldrod")             .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.obsidianingot         = register(new ItemBase("obsidianingot")       .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.ingotbloodstone       = register(new ItemBase("ingotbloodstone")     .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.ingotsilver           = register(new ItemBase("ingotsilver")         .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.bloodstonedust        = register(new ItemBase("bloodstonedust")      .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.blackdiamond          = register(new ItemBase("blackdiamond")        .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.dragonstoneshard      = register(new ItemBase("dragonstoneshard")    .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.irondust              = register(new ItemBase("irondust")            .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.gemdragonstone        = register(new ItemBase("gemdragonstone")      .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.superheatedironingot  = register(new ItemBase("superheatedironingot").setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.goldDust              = register(new ItemBase("goldDust")            .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.moltenglass           = register(new ItemBase("moltenglass")         .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.IceBucket             = register(new ItemBase("IceBucket")           .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.ObsidianBucket        = register(new ItemBase("ObsidianBucket")      .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.Mapinabottle          = register(new ItemBase("Mapinabottle")        .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.Shipinabottle         = register(new ItemBase("Shipinabottle")       .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.rcendereye            = register(new ItemBase("rcendereye")          .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.WoodenBookcasedoor    = register(new ItemBase("WoodenBookcasedoor")  .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.IronBookcasedoor      = register(new ItemBase("IronBookcasedoor")    .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.AncientFlower         = register(new ItemBase("AncientFlower")       .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.Wrappedcorn           = register(new ItemBase("Wrappedcorn")         .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.AncientSeeds          = register(new ItemBase("AncientSeeds")        .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.sugarcaneItemBase     = register(new ItemBase("sugarcaneItemBase")   .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.CornSeed              = register(new ItemBase("CornSeed")            .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.stalksItemBase        = register(new ItemBase("stalksItemBase")      .setCreativeTab(reactioncraft.ReactioncraftItems));
 
 
         //Currency Items
-        IntegratedItems.Bag               = register(new ItemBase("Bag")             .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.Sack              = register(new ItemBase("Sack")            .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.Straw             = register(new ItemBase("Straw")           .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.CoinMould         = register(new ItemBase("CoinMould")       .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.moltengold        = register(new ItemBase("moltengold")      .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.moltensilver      = register(new ItemBase("moltensilver")    .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.moltencopper      = register(new ItemBase("moltencopper")    .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.moltenbronze      = register(new ItemBase("moltenbronze")    .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.copperbucket      = register(new ItemBase("copperbucket")    .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.silverbucket      = register(new ItemBase("silverbucket")    .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.bronzebucket      = register(new ItemBase("bronzebucket")    .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.goldbucket        = register(new ItemBase("goldbucket")      .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.ingotRefinedgold  = register(new ItemBase("ingotRefinedgold").setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.ingotSilver       = register(new ItemBase("ingotSilver")     .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.ingotBronze       = register(new ItemBase("ingotBronze")     .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.ingotCopper       = register(new ItemBase("ingotCopper")     .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.ingotmould        = register(new ItemBase("ingotmould")      .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.ruby              = register(new ItemBase("ruby")            .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.Metadatacoin      = register(new ItemBase("Metadatacoin")    .setCreativeTab(Reactioncraft.ReactioncraftItems));
+        IntegratedItems.Bag               = register(new ItemBase("Bag")             .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.Sack              = register(new ItemBase("Sack")            .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.Straw             = register(new ItemBase("Straw")           .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.CoinMould         = register(new ItemBase("CoinMould")       .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.moltengold        = register(new ItemBase("moltengold")      .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.moltensilver      = register(new ItemBase("moltensilver")    .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.moltencopper      = register(new ItemBase("moltencopper")    .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.moltenbronze      = register(new ItemBase("moltenbronze")    .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.copperbucket      = register(new ItemBase("copperbucket")    .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.silverbucket      = register(new ItemBase("silverbucket")    .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.bronzebucket      = register(new ItemBase("bronzebucket")    .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.goldbucket        = register(new ItemBase("goldbucket")      .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.ingotRefinedgold  = register(new ItemBase("ingotRefinedgold").setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.ingotSilver       = register(new ItemBase("ingotSilver")     .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.ingotBronze       = register(new ItemBase("ingotBronze")     .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.ingotCopper       = register(new ItemBase("ingotCopper")     .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.ingotmould        = register(new ItemBase("ingotmould")      .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.ruby              = register(new ItemBase("ruby")            .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.Metadatacoin      = register(new ItemBase("Metadatacoin")    .setCreativeTab(reactioncraft.ReactioncraftItems));
 
+        
         //Armor Items
-        IntegratedItems.Crown             = register(new ItemBase("Crown")           .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.KinglyChest       = register(new ItemBase("KinglyChest")     .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.KinglyLegs        = register(new ItemBase("KinglyLegs")      .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.KinglyBoots       = register(new ItemBase("KinglyBoots")     .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.emeraldcrown      = register(new ItemBase("emeraldcrown")    .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.diamondcrown      = register(new ItemBase("diamondcrown")    .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.rubycrown         = register(new ItemBase("rubycrown")       .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.bloodstonehelm    = register(new ItemBase("bloodstonehelm")  .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.bloodstonechest   = register(new ItemBase("bloodstonechest") .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.bloodstonelegs    = register(new ItemBase("bloodstonelegs")  .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.bloodstoneboots   = register(new ItemBase("bloodstoneboots") .setCreativeTab(Reactioncraft.ReactioncraftItems));
+        IntegratedItems.Crown             = register(new ItemBase("Crown")           .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.KinglyChest       = register(new ItemBase("KinglyChest")     .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.KinglyLegs        = register(new ItemBase("KinglyLegs")      .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.KinglyBoots       = register(new ItemBase("KinglyBoots")     .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.emeraldcrown      = register(new ItemBase("emeraldcrown")    .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.diamondcrown      = register(new ItemBase("diamondcrown")    .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.rubycrown         = register(new ItemBase("rubycrown")       .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.bloodstonehelm    = register(new ItemBase("bloodstonehelm")  .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.bloodstonechest   = register(new ItemBase("bloodstonechest") .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.bloodstonelegs    = register(new ItemBase("bloodstonelegs")  .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.bloodstoneboots   = register(new ItemBase("bloodstoneboots") .setCreativeTab(reactioncraft.ReactioncraftItems));
 
         //Weapons
-        IntegratedItems.ObbySword              = register(new ItemBase("ObbySword")             .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.ObbyPick               = register(new ItemBase("ObbyPick")              .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.ObbyShovel             = register(new ItemBase("ObbyShovel")            .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.ObbyAxe                = register(new ItemBase("ObbyAxe")               .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.ObbyHoe                = register(new ItemBase("ObbyHoe")               .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.BloodstoneSword        = register(new ItemBase("BloodstoneSword")       .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.BloodstonePick         = register(new ItemBase("BloodstonePick")        .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.BloodstoneShovel       = register(new ItemBase("BloodstoneShovel")      .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.BloodstoneAxe          = register(new ItemBase("BloodstoneAxe")         .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.BloodstoneHoe          = register(new ItemBase("BloodstoneHoe")         .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.BloodstoneBlade        = register(new ItemBase("BloodstoneBlade")       .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.GoldenSwordFragment    = register(new ItemBase("GoldenSwordFragment")   .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.UnbindedSword          = register(new ItemBase("UnbindedSword")         .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.BloodstoneDiamondPick  = register(new ItemBase("BloodstoneDiamondPick") .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.Bat                    = register(new ItemBase("Bat")                   .setCreativeTab(Reactioncraft.ReactioncraftItems));
+        IntegratedItems.Bat                    = register(new ItemBase("Bat")                   .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.ObbySword              = (ItemObsidanSword) register(new ItemObsidanSword("ObbySword", IntegratedMaterials.EnumToolMaterialObby));
+        IntegratedItems.ObbyPick               = (ItemObsidanPick)  register(new ItemObsidanPick("ObbyPick", IntegratedMaterials.EnumToolMaterialObby)                              .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.ObbyShovel             = (ItemObsidianShovel) register(new ItemObsidianShovel("ObbyShovel", IntegratedMaterials.EnumToolMaterialObby)                       .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.ObbyAxe                = (ItemObsidianAxe) register(new ItemObsidianAxe("ObbyAxe", IntegratedMaterials.EnumToolMaterialObby)                                .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.ObbyHoe                = (ItemObsidianHoe) register(new ItemObsidianHoe("ObbyHoe", IntegratedMaterials.EnumToolMaterialObby)                                .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.BloodstoneSword        = (ItemBloodstoneSword) register(new ItemBloodstoneSword("BloodstoneSword", IntegratedMaterials.EnumToolMaterialBloodstone)          .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.BloodstonePick         = (ItemBloodstonePick) register(new ItemBloodstonePick("BloodstonePick", IntegratedMaterials.EnumToolMaterialBloodstone)             .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.BloodstoneShovel       = (ItemBloodstoneShovel) register(new ItemBloodstoneShovel("BloodstoneShovel", IntegratedMaterials.EnumToolMaterialBloodstone)       .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.BloodstoneAxe          = (ItemBloodstoneAxe) register(new ItemBloodstoneAxe("BloodstoneAxe", IntegratedMaterials.EnumToolMaterialBloodstone)                .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.BloodstoneHoe          = (ItemBloodstoneHoe) register(new ItemBloodstoneHoe("BloodstoneHoe", IntegratedMaterials.EnumToolMaterialBloodstone)                .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.BloodstoneDiamondPick  = (ItemBlackdiamondPick) register(new ItemBlackdiamondPick("BloodstoneDiamondPick", IntegratedMaterials.EnumToolMaterialBloodstone2) .setCreativeTab(reactioncraft.ReactioncraftItems));
+        
+        //Weapon Parts
+        IntegratedItems.BloodstoneBlade        = register(new ItemBase("BloodstoneBlade")       .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.GoldenSwordFragment    = register(new ItemBase("GoldenSwordFragment")   .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.UnbindedSword          = register(new ItemBase("UnbindedSword")         .setCreativeTab(reactioncraft.ReactioncraftItems));
+
 
         //Ores
-        IntegratedItems.meltedventinite  = register(new ItemBase("meltedventinite") .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.meltedwizimite   = register(new ItemBase("meltedwizimite")  .setCreativeTab(Reactioncraft.ReactioncraftItems));
+        IntegratedItems.meltedventinite  = register(new ItemBase("meltedventinite") .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.meltedwizimite   = register(new ItemBase("meltedwizimite")  .setCreativeTab(reactioncraft.ReactioncraftItems));
 
         //Made For Other Mod Items
-        IntegratedItems.scoop            = register(new ItemBase("scoop")           .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.hiveframe        = register(new ItemBase("hiveframe")       .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.honeycomb        = register(new ItemBase("honeycomb")       .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.pollencomb       = register(new ItemBase("pollencomb")      .setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.Blackdiamondbore = register(new ItemBase("Blackdiamondbore").setCreativeTab(Reactioncraft.ReactioncraftItems));
-        IntegratedItems.Bloodstonebore   = register(new ItemBase("Bloodstonebore")  .setCreativeTab(Reactioncraft.ReactioncraftItems));     
-    }
-
-    //Custom Methods
-    public static void registerRenders()
-    {
-        //Foods
-        registerRender(IntegratedItems.raw_human);
+        IntegratedItems.scoop            = register(new ItemBase("scoop")           .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.hiveframe        = register(new ItemBase("hiveframe")       .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.honeycomb        = register(new ItemBase("honeycomb")       .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.pollencomb       = register(new ItemBase("pollencomb")      .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.Blackdiamondbore = register(new ItemBase("Blackdiamondbore").setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.Bloodstonebore   = register(new ItemBase("Bloodstonebore")  .setCreativeTab(reactioncraft.ReactioncraftItems));     
     }
 
     private static void registerRender(Item item) 
     {
-        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(Reactioncraft.MODID + ":" + item.getUnlocalizedName().substring(5),"inventory"));
+        Minecraft.getMinecraft().getRenderItem().getItemModelMesher().register(item, 0, new ModelResourceLocation(reactioncraft.MODID + ":" + item.getUnlocalizedName().substring(5),"inventory"));
     }
 
-    //Register Basic Items
+   
     private static <T extends Item> T register(T item) 
     {
         GameRegistry.register(item);
