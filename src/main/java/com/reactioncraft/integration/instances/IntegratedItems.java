@@ -1,10 +1,12 @@
 package com.reactioncraft.integration.instances;
 
-import com.reactioncraft.core.ItemBase;
-import com.reactioncraft.food.common.*;
-import com.reactioncraft.net.common.*;
 
+import com.reactioncraft.core.common.ItemBaseSword;
+import com.reactioncraft.core.common.items.*;
+import com.reactioncraft.net.common.*;
+import com.reactioncraft.tools.common.*;
 import net.minecraft.item.Item;
+
 
 public class IntegratedItems
 {
@@ -12,18 +14,18 @@ public class IntegratedItems
 	
 	//Food Weapons
 	public static ItemBase meat_cleaver;
-	public static ItemBase Knfie;
+	public static ItemBaseSword Knife;
 	
 	//Food Drops
-	public static Item raw_human;
-	public static ItemHumanCooked cooked_human;
-	public static ItemRawLamb raw_lamb;
-    public static ItemCookedLamb cooked_lamb;
-    public static ItemRawHorse raw_horse;
-    public static ItemCookedHorse cooked_horse;
-    public static ItemChickenHead chicken_head;
-    public static ItemBeef beef_chunk;
-    public static ItemPork pork_chunk;
+	public static ItemFoodBase raw_human;
+	public static ItemFoodBase cooked_human;
+	public static ItemFoodBase raw_lamb;
+    public static ItemFoodBase cooked_lamb;
+    public static ItemFoodBase raw_horse;
+    public static ItemFoodBase cooked_horse;
+    public static ItemFoodBase chicken_head;
+    public static ItemFoodBase beef_chunk;
+    public static ItemFoodBase pork_chunk;
     
     //Food
     public static ItemBase AncientFruit;
@@ -57,7 +59,7 @@ public class IntegratedItems
     public static ItemBase hilt;
     public static ItemBase net;
     public static ItemCompleteNet complete_net;
-    //public static ItemBase caught;
+    public static ItemBase caught;
     public static Item caughtplayer;
     public static ItemBase creativeNet;
     
@@ -154,19 +156,19 @@ public class IntegratedItems
     public static ItemBase bloodstoneboots;
     
     //Weapons
-    public static ItemBase ObbySword;
-    public static ItemBase ObbyPick;
-    public static ItemBase ObbyShovel;
-    public static ItemBase ObbyAxe;
-    public static ItemBase ObbyHoe;
-    public static ItemBase BloodstoneSword;
-    public static ItemBase BloodstonePick;
-    public static ItemBase BloodstoneShovel;
-    public static ItemBase BloodstoneAxe;
-    public static ItemBase BloodstoneHoe;
+    public static ItemObsidanSword ObbySword;
+    public static ItemObsidanPick ObbyPick;
+    public static ItemObsidianShovel ObbyShovel;
+    public static ItemObsidianAxe ObbyAxe;
+    public static ItemObsidianHoe ObbyHoe;
+    public static ItemBloodstoneSword BloodstoneSword;
+    public static ItemBloodstonePick BloodstonePick;
+    public static ItemBloodstoneShovel BloodstoneShovel;
+    public static ItemBloodstoneAxe BloodstoneAxe;
+    public static ItemBloodstoneHoe BloodstoneHoe;
     public static ItemBase BloodstoneBlade;
     public static ItemBase GoldenSwordFragment;
     public static ItemBase UnbindedSword;
-    public static ItemBase BloodstoneDiamondPick;
+    public static ItemBlackdiamondPick BloodstoneDiamondPick;
     public static ItemBase Bat;
 }

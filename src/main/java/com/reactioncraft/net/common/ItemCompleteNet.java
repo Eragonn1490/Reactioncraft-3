@@ -3,44 +3,33 @@ package com.reactioncraft.net.common;
 import java.util.List;
 import java.util.Set;
 import com.google.common.collect.ImmutableSet;
-import com.google.common.collect.Sets;
 import com.reactioncraft.reactioncraft;
 import com.reactioncraft.core.ItemModelProvider;
 import com.reactioncraft.integration.instances.IntegratedItems;
-
-import net.minecraft.block.Block;
 import net.minecraft.entity.Entity;
-import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLiving;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemAxe;
-import net.minecraft.item.ItemPickaxe;
-import net.minecraft.item.ItemSpade;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
-import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.text.TextFormatting;
-import net.minecraft.world.World;
-import net.minecraftforge.client.event.sound.PlaySoundEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 {
 	public int retunedAmt;
+	public int myReturnedAmt;
+	protected final String name;
 
-	public ItemCompleteNet(ToolMaterial mat) 
+	public ItemCompleteNet(String name, ToolMaterial mat)
 	{
 		super(mat);
 		//damageVsEntity = 0.0F;
 		//attackSpeed = 0.0F;
-		this.setRegistryName("complete_net");
-		this.setUnlocalizedName("complete_net");
+		this.name = name;
+		this.setRegistryName(new ResourceLocation(reactioncraft.MODID, name));
+		this.setUnlocalizedName(reactioncraft.MODID + "." + name);
 		this.setMaxStackSize(1);
 		this.setCreativeTab(null);
 	}
@@ -53,8 +42,6 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 	@Override
 	public boolean onLeftClickEntity(ItemStack stack, EntityPlayer player, Entity entity)
 	{
-		ItemStack net = new ItemStack(IntegratedItems.complete_net);
-		
 		if (entity != null || !reactioncraft.exclusionList.isExcluded(entity) && entity instanceof EntityLiving)
 		{
 			if (entity instanceof EntityPlayer)
@@ -63,21 +50,22 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 			}
 			else
 			{
-				NBTTagCompound entityplayer = new NBTTagCompound();
-				entity.writeToNBT(entityplayer);
-				entityplayer.removeTag("Pos");
-				entityplayer.removeTag("Motion");
-				entityplayer.removeTag("Rotation");
-				entityplayer.removeTag("Dimension");
-				entityplayer.removeTag("PortalCooldown");
-				entityplayer.removeTag("InLove");
-				entityplayer.removeTag("HurtTime");
-				entityplayer.removeTag("DeathTime");
-				entityplayer.removeTag("AttackTime");
+				NBTTagCompound entityTag = new NBTTagCompound();
+				entity.writeToNBTOptional(entityTag);
+				entityTag.removeTag("Pos");
+				entityTag.removeTag("Motion");
+				entityTag.removeTag("Rotation");
+				entityTag.removeTag("Dimension");
+				entityTag.removeTag("PortalCooldown");
+				entityTag.removeTag("InLove");
+				entityTag.removeTag("HurtTime");
+				entityTag.removeTag("DeathTime");
+				entityTag.removeTag("AttackTime");
+
 				ItemStack is = new ItemStack(IntegratedItems.caught);
-				is.setTagCompound(new NBTTagCompound());
-				is.getTagCompound().setString("entity", EntityList.getEntityString(entity));
-				is.getTagCompound().setTag("entityData", entityplayer);
+				NBTTagCompound nbt = new NBTTagCompound();
+				nbt.setTag("EntityData", entityTag);
+				is.setTagCompound(nbt);
 				player.dropItem(is, true);
 				stack.damageItem(1, player);
 				entity.setDead();
@@ -97,36 +85,13 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 	}
 
 	/**
-	 * allows items to add custom lines of information to the mouseover description
-	 */
-	@Override
-	public void addInformation(ItemStack itemStack, EntityPlayer player, List list, boolean par4)
-	{
-		if (itemStack.getTagCompound() != null)
-		{
-			list.add("Hilt: " + itemStack.getTagCompound().getInteger("hilt"));
-			list.add("Net: " + itemStack.getTagCompound().getInteger("net"));
-		}
-		else
-		{
-			if(itemStack.getTagCompound() != null)
-			{
-				list.add("Hilt: " + itemStack.getTagCompound().getInteger("hilt"));
-				list.add("Net: " + itemStack.getTagCompound().getInteger("net"));
-			}
-		}
-		super.addInformation(itemStack, player, list, par4);
-	}
-
-
-	/**
-	 * Returns True is the item is renderer in full 3D when hold.
-	 */
-	@SideOnly(Side.CLIENT)
-	public boolean isFull3D()
-	{
-		return true;
-	}
+     * Returns True is the item is renderer in full 3D when hold.
+     */
+    @SideOnly(Side.CLIENT)
+    public boolean isFull3D()
+    {
+        return true;
+    }
 
 	/**
 	 * Returns true if this item should be rotated by 180 degrees around the Y axis when being held in an entities
@@ -136,7 +101,7 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 	@Override
 	public boolean shouldRotateAroundWhenRendering()
 	{
-		return false;
+		return true;
 	}
 	
 	@Override
@@ -148,6 +113,7 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 			int e = compound.getInteger("hilt");
 			int netLevel = compound.getInteger("net");
 			retunedAmt = (e * 10 + netLevel * 10);
+			myReturnedAmt = retunedAmt;
 			return retunedAmt;
 		}
 		catch (NullPointerException var5)
@@ -158,8 +124,29 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 	}
 
 	@Override
-	public void registerItemModel(Item item) 
+	public void addInformation(ItemStack itemStack, EntityPlayer player, List<String> list, boolean par4)
 	{
-		reactioncraft.proxy.registerItemRenderer(this, 0, "complete_Net");
+		if (itemStack.getTagCompound() != null)
+		{
+			list.add("Hilt: " + itemStack.getTagCompound().getInteger("str1"));
+			list.add("Net: "  + itemStack.getTagCompound().getInteger("str2"));
+			list.add("Uses: " + myReturnedAmt);
+		}
+		else
+		{
+			if(itemStack.getTagCompound() != null)
+			{
+				list.add("Hilt: " + itemStack.getTagCompound().getInteger("str1"));
+				list.add("Net: "  + itemStack.getTagCompound().getInteger("str2"));
+				list.add("Uses: " + myReturnedAmt);
+			}
+		}
+		super.addInformation(itemStack, player, list, par4);
 	}
+	
+    @Override
+    public void registerItemModel()
+    {
+        reactioncraft.proxy.registerItemRenderer(this, 0, this.name);
+    }
 }

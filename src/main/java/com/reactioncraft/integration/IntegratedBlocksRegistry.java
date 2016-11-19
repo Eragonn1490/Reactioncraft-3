@@ -1,10 +1,8 @@
 package com.reactioncraft.integration;
 
 import com.reactioncraft.reactioncraft;
-import com.reactioncraft.core.BlockBase;
-import com.reactioncraft.desert.common.BlockTree;
+import com.reactioncraft.core.common.blocks.BlockBase;
 import com.reactioncraft.integration.instances.IntegratedBlocks;
-
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemBlock;

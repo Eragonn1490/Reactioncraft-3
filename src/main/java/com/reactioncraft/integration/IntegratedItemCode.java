@@ -1,8 +1,5 @@
 package com.reactioncraft.integration;
 
-import com.reactioncraft.reactioncraft;
-import com.reactioncraft.food.common.ItemFoodMod;
-
 public class IntegratedItemCode
 {
 	/**

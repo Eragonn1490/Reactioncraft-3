@@ -1,35 +1,20 @@
 package com.reactioncraft.core;
 
-/**
-import Reactioncraft.machines.common.ContainerBrickOven;
-import Reactioncraft.machines.common.ContainerClayalizer;
-import Reactioncraft.machines.common.ContainerFreezer;
-import Reactioncraft.machines.common.GuiBrickoven;
-import Reactioncraft.machines.common.GuiClayalizer;
-import Reactioncraft.machines.common.GuiFreezer;
-import Reactioncraft.machines.common.TileEntityBrickOven;
-import Reactioncraft.machines.common.TileEntityClayalizer;
-import Reactioncraft.machines.common.TileEntityFreezer;
-**/
-
-import net.minecraftforge.fml.common.network.IGuiHandler;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.network.IGuiHandler;
 
 public class CommonProxy implements IGuiHandler
 {
 	public void registerItemRenderer(Item item, int meta, String id) 
 	{
-		 
 	}
-	
-	public static void registerRenderInformation() 
+
+	public void registerRenderInformation() 
 	{
-		
 	}
-    
+
     public int addArmor(String armorName)
     {
         return 0;
