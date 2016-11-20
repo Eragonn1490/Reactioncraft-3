@@ -5,16 +5,18 @@ import com.reactioncraft.reactioncraft;
 import com.reactioncraft.core.common.items.ItemBaseSword;
 
 import net.minecraft.item.ItemSword;
+import net.minecraft.util.ResourceLocation;
 
 public class ItemKnife extends ItemBaseSword
 {
-    public ItemKnife(String string)
+    public ItemKnife(String name)
     {
-        super(string, ToolMaterial.IRON);
+        super(name, ToolMaterial.IRON);
         this.setMaxStackSize(1);
         this.setMaxDamage(25);
         this.setCreativeTab(reactioncraft.ReactioncraftItems);
         this.setNoRepair();
+        
     }
 
     /**
