@@ -47,8 +47,8 @@ public class IntegratedItems
     public static ItemFoodBase cheese;
     public static ItemBase churn;
     public static ItemFoodBase buns;
-    public static ItemFoodBase SamonRaw;
-    public static ItemFoodBase Samon;
+    public static ItemFoodBase salmonRaw;
+    public static ItemFoodBase salmon;
     public static ItemFoodBase YellowTailRaw;
     public static ItemFoodBase YellowTailCooked;
     
@@ -61,7 +61,7 @@ public class IntegratedItems
     public static ItemCompleteNet complete_net;
     public static ItemBase caught;
     public static Item caughtplayer;
-    public static ItemBase creativeNet;
+    public static ItemBase creative_net;
     
     //Desert Items
     public static ItemBase SandStonePaste;
@@ -110,7 +110,7 @@ public class IntegratedItems
     
     //Made For Other Mods
     public static ItemBase scoop;
-    public static ItemBase hiveframe;
+    public static ItemBase bloodstoneframe;
     public static ItemBase honeycomb;
     public static ItemBase pollencomb;
     public static ItemBase Blackdiamondbore;

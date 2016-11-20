@@ -35,6 +35,6 @@ public class IntegratedRecipesRegistry
 
 	public static void machinerecipiesInit() 
 	{
-		//GameRegistry.addShapelessRecipe(new ItemStack(IntegratedBlocks.FreezerIdle), new Object[] {Blocks.DIRT});
+		GameRegistry.addShapelessRecipe(new ItemStack(IntegratedBlocks.ClayalizerIdle), new Object[] {Blocks.DIRT});
 	}
 }

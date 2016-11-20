@@ -24,6 +24,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLMissingMappingsEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 
 @Mod(modid = reactioncraft.MODID, name = reactioncraft.name, version = reactioncraft.version, acceptedMinecraftVersions = "[1.10.2]")
 
@@ -56,6 +57,7 @@ public class reactioncraft
     public void preInit(FMLPreInitializationEvent evt)
     {
         System.out.println("[REACTIONCRAFT] Pre Initialization Started");
+        NetworkRegistry.INSTANCE.registerGuiHandler(instance, new CommonProxy());
         proxy.registerRenderInformation();
         IntegratedMaterials.initMaterials();
         IntegratedItemRegistry.init();

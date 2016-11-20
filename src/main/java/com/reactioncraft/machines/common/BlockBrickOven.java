@@ -3,6 +3,8 @@ package com.reactioncraft.machines.common;
 import java.util.Random;
 import javax.annotation.Nullable;
 
+import com.reactioncraft.reactioncraft;
+import com.reactioncraft.core.common.blocks.BlockBase;
 import com.reactioncraft.core.common.tileEntities.TileEntityBrickOven;
 import com.reactioncraft.integration.instances.IntegratedBlocks;
 
@@ -12,6 +14,7 @@ import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyDirection;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
@@ -19,6 +22,7 @@ import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.InventoryHelper;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
@@ -39,10 +43,12 @@ public class BlockBrickOven extends BlockContainer
     public static final PropertyDirection FACING = BlockHorizontal.FACING;
     private final boolean isBurning;
     private static boolean keepInventory;
-
-    public BlockBrickOven(boolean isBurning)
+    protected String name;
+    
+    public BlockBrickOven(String name, boolean isBurning)
     {
         super(Material.ROCK);
+        this.name = name;
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
         this.isBurning = isBurning;
     }
@@ -296,4 +302,16 @@ public class BlockBrickOven extends BlockContainer
     {
         return new BlockStateContainer(this, new IProperty[] {FACING});
     }
+    
+    public void registerItemModel(ItemBlock itemBlock) 
+	{
+		reactioncraft.proxy.registerItemRenderer(itemBlock, 0, name);
+	}
+
+	@Override
+	public BlockBrickOven setCreativeTab(CreativeTabs tab) 
+	{
+		super.setCreativeTab(tab);
+		return IntegratedBlocks.BrickOvenIdle;
+	}
 }

@@ -18,7 +18,7 @@ public class ItemBasicSword extends ItemSword implements ItemModelProvider
         super(var2);
         this.name = var1;
 		this.setRegistryName(new ResourceLocation(reactioncraft.MODID, name));
-        //this.setUnlocalizedName(name);
+        this.setUnlocalizedName(name);
         this.setCreativeTab(reactioncraft.ReactioncraftItems);
     }
     

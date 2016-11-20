@@ -28,7 +28,7 @@ public class IntegratedBlocks
     public static BlockBase WoodenBookcasedoorBlockBase;
     public static BlockBase IronBookcasedoorBlockBase;
     public static BlockBase leverbookcase;
-    public static BlockBase HireoMulti;
+    public static BlockHireoMulti HireoMulti;
     public static BlockBase ColumnMulti;
     public static BlockBase ColumnMulti2;
     public static BlockBase DesertBlockBaseMulti;

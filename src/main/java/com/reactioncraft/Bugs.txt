@@ -6,3 +6,6 @@ Machines dont show up in creative inventory
 
 Hammers:
 Currently hammers dont damage when in inventory crafting.
+
+Guis: 
+crash when making items? and blocks dont show up in inventory

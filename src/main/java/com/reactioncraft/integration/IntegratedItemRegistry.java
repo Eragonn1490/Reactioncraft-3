@@ -53,19 +53,20 @@ public class IntegratedItemRegistry
         IntegratedItems.Hamburger          = register(new ItemFoodBase("Hamburger", 3, 0.6f, true));
         IntegratedItems.Cheeseburger       = register(new ItemFoodBase("Cheeseburger", 3, 0.6f, true));
         IntegratedItems.Bacon              = register(new ItemFoodBase("Bacon", 3, 0.6f, true));
-        IntegratedItems.raw_bacon           = register(new ItemFoodBase("raw_bacon", 3, 0.6f, true));
+        IntegratedItems.raw_bacon          = register(new ItemFoodBase("raw_bacon", 3, 0.6f, true));
         IntegratedItems.cheese             = register(new ItemFoodBase("cheese", 3, 0.6f, true));
         IntegratedItems.churn              = register(new ItemBase("churn"));
         IntegratedItems.buns               = register(new ItemFoodBase("buns", 3, 0.6f, true));
-        IntegratedItems.SamonRaw           = register(new ItemFoodBase("SamonRaw", 3, 0.6f, true));
-        IntegratedItems.Samon              = register(new ItemFoodBase("Samon", 3, 0.6f, true));
+        IntegratedItems.salmonRaw          = register(new ItemFoodBase("SamonRaw", 3, 0.6f, true));
+        IntegratedItems.salmon             = register(new ItemFoodBase("Samon", 3, 0.6f, true));
         IntegratedItems.YellowTailRaw      = register(new ItemFoodBase("YellowTailRaw", 3, 0.6f, true));
-        IntegratedItems.YellowTailCooked     = register(new ItemFoodBase("YellowTailCooked", 3, 0.6f, true));
+        IntegratedItems.YellowTailCooked   = register(new ItemFoodBase("YellowTailCooked", 3, 0.6f, true));
 
         //Net Items
         IntegratedItems.hilt         = register(new ItemPieceHilt("piece_hilt")       .setCreativeTab(null));
         IntegratedItems.net          = register(new ItemPieceNet("piece_net")         .setCreativeTab(null));
         IntegratedItems.complete_net = register(new ItemCompleteNet("complete_net", IntegratedMaterials.EnumToolMaterialNet));
+        IntegratedItems.creative_net = register(new ItemBase("creative_net")         .setCreativeTab(reactioncraft.ReactioncraftItems));
 
         //Desert Items
         IntegratedItems.SandStonePaste  = register(new ItemBase("SandStonePaste")     .setCreativeTab(reactioncraft.ReactioncraftItems));
@@ -176,7 +177,7 @@ public class IntegratedItemRegistry
 
         //Made For Other Mod Items
         IntegratedItems.scoop            = register(new ItemBase("scoop")           .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.hiveframe        = register(new ItemBase("hiveframe")       .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.bloodstoneframe  = register(new ItemBase("bloodstoneframe")       .setCreativeTab(reactioncraft.ReactioncraftItems));
         IntegratedItems.honeycomb        = register(new ItemBase("honeycomb")       .setCreativeTab(reactioncraft.ReactioncraftItems));
         IntegratedItems.pollencomb       = register(new ItemBase("pollencomb")      .setCreativeTab(reactioncraft.ReactioncraftItems));
         IntegratedItems.Blackdiamondbore = register(new ItemBase("Blackdiamondbore").setCreativeTab(reactioncraft.ReactioncraftItems));
