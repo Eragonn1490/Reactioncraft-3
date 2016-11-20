@@ -16,15 +16,17 @@ public class MachinesCraftingHandler
 	@SubscribeEvent
 	public void onCrafting(ItemCraftedEvent event)
 	{
-		 System.out.println("event launched");
-		 ItemStack irondust = new ItemStack(IntegratedItems.irondust);
-		 
-		 if(event.player.inventoryContainer.inventoryItemStacks.contains(OreDictionary.getOres("hammer")));
-		 {
-			 if (event.crafting.getItem() == Items.IRON_AXE)
-			 {
-				 event.player.dropItem(irondust, true);
-			 }
-		 }
+		ItemStack irondust = new ItemStack(IntegratedItems.irondust);
+
+		if (event.crafting.getItem() != Items.IRON_AXE)
+		{
+			return; 
+		}
+
+		else if(event.crafting.getItem() == Items.IRON_AXE && event.player.inventoryContainer.inventoryItemStacks.contains(OreDictionary.getOres("hammer")));
+		{
+			System.out.println("event launched");
+			event.player.dropItem(irondust, true);
+		}
 	}
 }
