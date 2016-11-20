@@ -16,6 +16,6 @@ public class ItemChisel2 extends ItemBaseChisel
         this.setUnlocalizedName("Chisel");
         this.setCreativeTab(reactioncraft.ReactioncraftItems);
         this.setUnlocalizedName(unlocalizedName);
-        this.setRegistryName(new ResourceLocation(reactioncraft.MODID, unlocalizedName));
+        this.setRegistryName(new ResourceLocation(reactioncraft.MODID + "." + unlocalizedName));
     }
 }
