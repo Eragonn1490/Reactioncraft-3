@@ -9,6 +9,7 @@ import com.reactioncraft.core.common.biomes.BiomeManager;
 import com.reactioncraft.core.common.creativeTab.RCTAB;
 import com.reactioncraft.core.common.creativeTab.RCTAB1;
 import com.reactioncraft.core.common.creativeTab.RCTAB2;
+import com.reactioncraft.core.common.tileEntities.TileEntityRegistry;
 import com.reactioncraft.integration.IntegratedBlocksRegistry;
 import com.reactioncraft.integration.IntegratedEventRegistry;
 import com.reactioncraft.integration.IntegratedItemRegistry;
@@ -48,6 +49,9 @@ public class reactioncraft
     //Exclusion List for Mobs
     public static ExclusionList exclusionList;
     
+    //For Wild_Card Values #updated from OreDict (Replace as it pops up)
+    public static final int WILDCARD_VALUE = Short.MAX_VALUE;
+    
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent evt)
     {
@@ -57,6 +61,7 @@ public class reactioncraft
         IntegratedItemRegistry.init();
         IntegratedBlocksRegistry.init();
         BiomeManager.registerBiomes();
+        TileEntityRegistry.registerTileEntities();
     }
     
     @Mod.EventHandler
@@ -64,6 +69,7 @@ public class reactioncraft
     {
     	IntegratedEventRegistry.eventInit();
     	IntegratedRecipesRegistry.netrecipyInit();
+    	IntegratedRecipesRegistry.machinerecipiesInit();
     }
     
     @Mod.EventHandler

@@ -1,0 +1,6 @@
+Features 1.10.x: 
+Scrap Feature from working with iron items, as long as you have a hammer in your inventory. (Semi Working)
+Net: now shows max uses, level of the net and hilt used in crafting.
+
+Old Features:
+Nearly all old features brought up to date.

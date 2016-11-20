@@ -1,4 +1,4 @@
-package com.reactioncraft.core.common;
+package com.reactioncraft.core.common.items;
 
 import java.util.Set;
 

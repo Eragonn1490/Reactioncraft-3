@@ -1,7 +1,8 @@
 package com.reactioncraft.integration.instances;
 
-import com.reactioncraft.core.common.blocks.BlockBase;
-import com.reactioncraft.desert.common.BlockTree;
+import com.reactioncraft.core.common.blocks.*;
+import com.reactioncraft.desert.common.*;
+import com.reactioncraft.machines.common.*;
 
 
 
@@ -37,12 +38,12 @@ public class IntegratedBlocks
     public static BlockBase CherryTreeSapling;
     public static BlockBase GlassMulti;
     public static BlockBase GlowingGlassMulti;
-    public static BlockBase FreezerActive;
-    public static BlockBase FreezerIdle;
-    public static BlockBase BrickOvenActive;
-    public static BlockBase BrickOvenIdle;
-    public static BlockBase ClayalizerIdle;
-    public static BlockBase ClayalizerActive;
+    public static BlockFreezer FreezerActive;
+    public static BlockFreezer FreezerIdle;
+    public static BlockBrickOven BrickOvenActive;
+    public static BlockBrickOven BrickOvenIdle;
+    public static BlockClayalizer ClayalizerIdle;
+    public static BlockClayalizer ClayalizerActive;
     public static BlockBase rchive;
     public static BlockBase surfaceOres;
     public static BlockBase netherOres;

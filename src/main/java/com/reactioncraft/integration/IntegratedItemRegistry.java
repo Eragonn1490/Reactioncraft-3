@@ -2,12 +2,11 @@ package com.reactioncraft.integration;
 
 import com.reactioncraft.reactioncraft;
 import com.reactioncraft.core.ItemModelProvider;
-import com.reactioncraft.core.common.ItemBaseSword;
 import com.reactioncraft.core.common.items.*;
+import com.reactioncraft.desert.common.*;
 import com.reactioncraft.integration.instances.IntegratedItems;
 import com.reactioncraft.net.common.*;
 import com.reactioncraft.tools.common.*;
-
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.item.Item;
@@ -77,13 +76,13 @@ public class IntegratedItemRegistry
         IntegratedItems.scroll          = register(new ItemBase("scroll")             .setCreativeTab(reactioncraft.ReactioncraftItems));
 
         //Special Tools
-        IntegratedItems.Hammer            = register(new ItemBase("Hammer")              .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.bloodstoneHammer  = register(new ItemBase("bloodstoneHammer")    .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.GoldChisel        = register(new ItemBase("GoldChisel")          .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.FlintChisel       = register(new ItemBase("FlintChisel")         .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.DiamondChisel     = register(new ItemBase("DiamondChisel")       .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.BloodstoneChisel  = register(new ItemBase("BloodstoneChisel")    .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.CopperChisel      = register(new ItemBase("CopperChisel")        .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.Hammer            = (ItemBaseHammer) register(new ItemBaseHammer("Hammer")           .setRegistryName("Hammer")           .setUnlocalizedName("Hammer")                                .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.bloodstoneHammer  = (ItemBaseHammer) register(new ItemBaseHammer("bloodstoneHammer") .setRegistryName("bloodstoneHammer") .setUnlocalizedName("bloodstoneHammer")                      .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.FlintChisel       = (ItemBaseChisel) register(new ItemBaseChisel("FlintChisel")      .setRegistryName("FlintChisel")      .setUnlocalizedName("FlintChisel")      .setMaxDamage(10)    .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.CopperChisel      = (ItemBaseChisel) register(new ItemBaseChisel("CopperChisel")     .setRegistryName("CopperChisel")     .setUnlocalizedName("CopperChisel")     .setMaxDamage(35)    .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.GoldChisel        = (ItemBaseChisel) register(new ItemBaseChisel("GoldChisel")       .setRegistryName("GoldChisel")       .setUnlocalizedName("GoldChisel")       .setMaxDamage(70)    .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.DiamondChisel     = (ItemBaseChisel) register(new ItemChisel1("DiamondChisel")       .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.BloodstoneChisel  = (ItemBaseChisel) register(new ItemChisel2("BloodstoneChisel")    .setCreativeTab(reactioncraft.ReactioncraftItems));
 
         //Misc Items
         IntegratedItems.ChainLoop             = register(new ItemBase("ChainLoop")           .setCreativeTab(reactioncraft.ReactioncraftItems));

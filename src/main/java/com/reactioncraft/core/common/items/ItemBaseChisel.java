@@ -1,18 +1,17 @@
-package com.reactioncraft.food.common;
-
+package com.reactioncraft.core.common.items;
 
 import com.reactioncraft.reactioncraft;
-import com.reactioncraft.core.common.items.ItemBaseSword;
 
 import net.minecraft.item.ItemSword;
+import net.minecraft.util.ResourceLocation;
 
-public class ItemKnife extends ItemBaseSword
+public class ItemBaseChisel extends ItemSword
 {
-    public ItemKnife(String string)
+    public ItemBaseChisel(String unlocalizedName)
     {
-        super(string, ToolMaterial.IRON);
+        super(ToolMaterial.WOOD);
         this.setMaxStackSize(1);
-        this.setMaxDamage(25);
+        this.setMaxDamage(10);
         this.setCreativeTab(reactioncraft.ReactioncraftItems);
         this.setNoRepair();
     }
