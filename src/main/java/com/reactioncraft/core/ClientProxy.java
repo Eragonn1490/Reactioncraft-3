@@ -1,9 +1,16 @@
 package com.reactioncraft.core;
 
 import com.reactioncraft.reactioncraft;
+import com.reactioncraft.core.common.tileEntities.TileEntityFreezer;
+import com.reactioncraft.machines.common.GuiFreezer;
+
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.common.network.IGuiHandler;
 
 public class ClientProxy extends CommonProxy
 {
@@ -14,6 +21,7 @@ public class ClientProxy extends CommonProxy
     {
     	ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(reactioncraft.MODID + ":" + id, "inventory"));
     }
+    
 
     @Override
     public void registerRenderInformation()

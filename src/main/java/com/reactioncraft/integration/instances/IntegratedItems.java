@@ -1,7 +1,6 @@
 package com.reactioncraft.integration.instances;
 
 
-import com.reactioncraft.core.common.ItemBaseSword;
 import com.reactioncraft.core.common.items.*;
 import com.reactioncraft.net.common.*;
 import com.reactioncraft.tools.common.*;
@@ -70,11 +69,11 @@ public class IntegratedItems
     public static ItemBase UncutDBGem;
     public static ItemBase CutDBGem;
     public static ItemBase scroll;
-    public static ItemBase GoldChisel;
-    public static ItemBase FlintChisel;
-    public static ItemBase DiamondChisel;
-    public static ItemBase BloodstoneChisel;
-    public static ItemBase CopperChisel;
+    public static ItemBaseChisel GoldChisel;
+    public static ItemBaseChisel FlintChisel;
+    public static ItemBaseChisel DiamondChisel;
+    public static ItemBaseChisel BloodstoneChisel;
+    public static ItemBaseChisel CopperChisel;
     
     //Misc Items
     public static ItemBase ChainLoop;
@@ -94,11 +93,11 @@ public class IntegratedItems
     public static ItemBase IceBucket;
     public static ItemBase ObsidianBucket;
     
-    public static ItemBase Hammer;
+    public static ItemBaseHammer Hammer;
     public static ItemBase Mapinabottle;
     public static ItemBase Shipinabottle;
     public static ItemBase rcendereye;
-    public static ItemBase bloodstoneHammer;
+    public static ItemBaseHammer bloodstoneHammer;
     public static ItemBase WoodenBookcasedoor;
     public static ItemBase IronBookcasedoor;
     public static ItemBase AncientFlower;

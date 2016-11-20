@@ -128,16 +128,16 @@ public class ItemCompleteNet extends ItemSword implements ItemModelProvider
 	{
 		if (itemStack.getTagCompound() != null)
 		{
-			list.add("Hilt: " + itemStack.getTagCompound().getInteger("str1"));
-			list.add("Net: "  + itemStack.getTagCompound().getInteger("str2"));
+			list.add("Hilt Level: " + itemStack.getTagCompound().getInteger("hilt"));
+			list.add("Net Level: "  + itemStack.getTagCompound().getInteger("net"));
 			list.add("Uses: " + myReturnedAmt);
 		}
 		else
 		{
 			if(itemStack.getTagCompound() != null)
 			{
-				list.add("Hilt: " + itemStack.getTagCompound().getInteger("str1"));
-				list.add("Net: "  + itemStack.getTagCompound().getInteger("str2"));
+				list.add("Hilt Level: " + itemStack.getTagCompound().getInteger("hilt"));
+				list.add("Net Level: "  + itemStack.getTagCompound().getInteger("net"));
 				list.add("Uses: " + myReturnedAmt);
 			}
 		}

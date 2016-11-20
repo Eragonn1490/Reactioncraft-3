@@ -1,9 +1,14 @@
 package com.reactioncraft.core;
 
+import com.reactioncraft.reactioncraft;
+import com.reactioncraft.core.common.tileEntities.*;
+import com.reactioncraft.machines.common.*;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.common.network.IGuiHandler;
+import net.minecraftforge.fml.common.network.*;
 
 public class CommonProxy implements IGuiHandler
 {
@@ -21,17 +26,14 @@ public class CommonProxy implements IGuiHandler
     }
 
 	@Override
-	public Object getServerGuiElement(int ID, net.minecraft.entity.player.EntityPlayer player, World world, int x, int y, int z) {
+	public Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) 
-	{
-		//TileEntity tileEntity;
-	    //return tileEntity == null ? null : (ID == 0 && tileEntity instanceof TileEntityClayalizer ? new GuiClayalizer(player.inventory, (TileEntityClayalizer)tileEntity) : (ID == 1 && tileEntity instanceof TileEntityBrickOven ? new GuiBrickoven(player.inventory, (TileEntityBrickOven)tileEntity) : (ID == 2 && tileEntity instanceof TileEntityFreezer ? new GuiFreezer(player.inventory, (TileEntityFreezer)tileEntity) : null)));
-		//remove comments at later date to update machines
+	public Object getClientGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
+		// TODO Auto-generated method stub
 		return null;
 	}
 }
