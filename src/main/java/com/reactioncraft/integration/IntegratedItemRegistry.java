@@ -4,7 +4,7 @@ import com.reactioncraft.reactioncraft;
 import com.reactioncraft.core.ItemModelProvider;
 import com.reactioncraft.core.common.items.*;
 import com.reactioncraft.desert.common.*;
-import com.reactioncraft.food.common.ItemchickenHead;
+import com.reactioncraft.food.common.*;
 import com.reactioncraft.integration.instances.IntegratedItems;
 import com.reactioncraft.net.common.*;
 import com.reactioncraft.tools.common.*;
@@ -20,7 +20,7 @@ public class IntegratedItemRegistry
     {
         //Food Related Weapons
         IntegratedItems.meat_cleaver = register(new ItemBase("meat_cleaver")  .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.Knife        = (ItemBaseSword) register(new ItemBaseSword("Knfie", IntegratedMaterials.EnumToolMaterialMeatcleaver)         .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.Knife        = (ItemKnife) register(new ItemKnife("Knife")         .setCreativeTab(reactioncraft.ReactioncraftItems));
 
         //Bone Drop
         IntegratedItems.bones         = register(new ItemBase("bones")        .setCreativeTab(reactioncraft.ReactioncraftItems));
