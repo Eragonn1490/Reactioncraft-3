@@ -1,4 +1,4 @@
-package com.reactioncraft.integration;
+package com.reactioncraft.food.common;
 
 import com.reactioncraft.core.common.items.ItemFoodBase;
 

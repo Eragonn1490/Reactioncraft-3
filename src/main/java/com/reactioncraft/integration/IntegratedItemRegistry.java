@@ -4,6 +4,7 @@ import com.reactioncraft.reactioncraft;
 import com.reactioncraft.core.ItemModelProvider;
 import com.reactioncraft.core.common.items.*;
 import com.reactioncraft.desert.common.*;
+import com.reactioncraft.food.common.ItemchickenHead;
 import com.reactioncraft.integration.instances.IntegratedItems;
 import com.reactioncraft.net.common.*;
 import com.reactioncraft.tools.common.*;
@@ -76,8 +77,8 @@ public class IntegratedItemRegistry
         IntegratedItems.scroll          = register(new ItemBase("scroll")             .setCreativeTab(reactioncraft.ReactioncraftItems));
 
         //Special Tools
-        IntegratedItems.Hammer            = (ItemBaseHammer) register(new ItemBaseHammer("Hammer")           .setRegistryName("Hammer")           .setUnlocalizedName("Hammer")                                .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.bloodstoneHammer  = (ItemBaseHammer) register(new ItemBaseHammer("bloodstoneHammer") .setRegistryName("bloodstoneHammer") .setUnlocalizedName("bloodstoneHammer")                      .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.Hammer            = (ItemBaseHammer) register(new ItemBaseHammer("Hammer")                                 .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.bloodstoneHammer  = (ItemBaseHammer) register(new ItemBaseHammer("bloodstoneHammer")                       .setCreativeTab(reactioncraft.ReactioncraftItems));
         IntegratedItems.FlintChisel       = (ItemBaseChisel) register(new ItemBaseChisel("FlintChisel")      .setRegistryName("FlintChisel")      .setUnlocalizedName("FlintChisel")      .setMaxDamage(10)    .setCreativeTab(reactioncraft.ReactioncraftItems));
         IntegratedItems.CopperChisel      = (ItemBaseChisel) register(new ItemBaseChisel("CopperChisel")     .setRegistryName("CopperChisel")     .setUnlocalizedName("CopperChisel")     .setMaxDamage(35)    .setCreativeTab(reactioncraft.ReactioncraftItems));
         IntegratedItems.GoldChisel        = (ItemBaseChisel) register(new ItemBaseChisel("GoldChisel")       .setRegistryName("GoldChisel")       .setUnlocalizedName("GoldChisel")       .setMaxDamage(70)    .setCreativeTab(reactioncraft.ReactioncraftItems));
