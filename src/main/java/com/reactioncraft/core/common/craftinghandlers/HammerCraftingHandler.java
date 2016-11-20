@@ -17,24 +17,26 @@ public class HammerCraftingHandler
 	@SubscribeEvent
 	public void onCrafting(ItemCraftedEvent event)
 	{
-		int i;
-
+	     ItemStack getItemUses;
+		
 		if (event.crafting.getItem() != Items.IRON_AXE)
-		{
 			return;
-		}
-			
-		for (i = 0; i < event.player.inventory.getSizeInventory(); i++)
+
+		if(event.crafting.getItem() == Items.IRON_AXE)
 		{
-			ItemStack slotStack = event.player.inventory.getStackInSlot(i);
-			if (slotStack != null && (slotStack.getItem() == IntegratedItems.Hammer || slotStack.getItem() == IntegratedItems.bloodstoneHammer))
+			for (int i = 0; i < event.player.inventory.getSizeInventory(); i++)
 			{
-				if (slotStack.getItemDamage() <= 0)
+				ItemStack slotStack = event.player.inventory.getStackInSlot(i);
+				if (slotStack != null && (slotStack.getItem() == IntegratedItems.Hammer || slotStack.getItem() == IntegratedItems.bloodstoneHammer))
 				{
-					event.player.inventory.setInventorySlotContents(i, null);
+					 getItemUses = new ItemStack(IntegratedItems.Hammer, 1, slotStack.getItemDamage() + 1);
+					
+					 if (getItemUses.stackSize == 0)
+                     {
+						 --getItemUses.stackSize;
+                     }
+					 event.player.inventory.setInventorySlotContents(i, getItemUses);
 				}
-				
-				System.out.println("jones");
 			}
 		}
 	}

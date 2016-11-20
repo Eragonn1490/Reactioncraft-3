@@ -28,29 +28,29 @@ public class IntegratedItems
     public static ItemFoodBase pork_chunk;
     
     //Food
-    public static ItemBase AncientFruit;
-    public static ItemBase EdibleFlesh;
-    public static ItemBase cookedCorn;
+    public static ItemFoodBase AncientFruit;
+    public static ItemFoodBase EdibleFlesh;
+    public static ItemFoodBase cookedCorn;
     public static ItemBase popcornseeds;
     public static ItemBase bagofpopcorn;
-    public static ItemBase poppedbagofpopcorn;
-    public static ItemBase UnwrappedCorn;
+    public static ItemFoodBase poppedbagofpopcorn;
+    public static ItemFoodBase UnwrappedCorn;
     public static ItemBase rawcorn;
-    public static ItemBase ChickenNuggets;
-    public static ItemBase RawNuggets;
-    public static ItemBase SlicedBread;
-    public static ItemBase HamSandwich;
-    public static ItemBase Hamburger;
-    public static ItemBase Cheeseburger;
-    public static ItemBase Bacon;
-    public static ItemBase BaconRaw;
-    public static ItemBase cheese;
+    public static ItemFoodBase ChickenNuggets;
+    public static ItemFoodBase RawNuggets;
+    public static ItemFoodBase SlicedBread;
+    public static ItemFoodBase HamSandwich;
+    public static ItemFoodBase Hamburger;
+    public static ItemFoodBase Cheeseburger;
+    public static ItemFoodBase Bacon;
+    public static ItemFoodBase raw_bacon;
+    public static ItemFoodBase cheese;
     public static ItemBase churn;
-    public static ItemBase buns;
-    public static ItemBase SamonRaw;
-    public static ItemBase Samon;
-    public static ItemBase YellowTailRaw;
-    public static ItemBase YellowTailCooked;
+    public static ItemFoodBase buns;
+    public static ItemFoodBase SamonRaw;
+    public static ItemFoodBase Samon;
+    public static ItemFoodBase YellowTailRaw;
+    public static ItemFoodBase YellowTailCooked;
     
     //Bone Drop
     public static ItemBase bones;

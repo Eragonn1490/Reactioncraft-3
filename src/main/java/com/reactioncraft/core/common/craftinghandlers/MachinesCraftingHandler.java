@@ -17,16 +17,20 @@ public class MachinesCraftingHandler
 	public void onCrafting(ItemCraftedEvent event)
 	{
 		ItemStack irondust = new ItemStack(IntegratedItems.irondust);
-
+		
 		if (event.crafting.getItem() != Items.IRON_AXE)
+			return;
+		
+		if(event.crafting.getItem() == Items.IRON_AXE)
 		{
-			return; 
-		}
-
-		else if(event.crafting.getItem() == Items.IRON_AXE && event.player.inventoryContainer.inventoryItemStacks.contains(OreDictionary.getOres("hammer")));
-		{
-			System.out.println("event launched");
-			event.player.dropItem(irondust, true);
+			for (int i = 0; i < event.player.inventory.getSizeInventory(); i++)
+			{
+				ItemStack slotStack = event.player.inventory.getStackInSlot(i);
+				if (slotStack != null && (slotStack.getItem() == IntegratedItems.Hammer || slotStack.getItem() == IntegratedItems.bloodstoneHammer))
+				{
+					event.player.dropItem(irondust, true);
+				}
+			}
 		}
 	}
 }

@@ -4,6 +4,7 @@ import java.util.Set;
 
 import com.google.common.collect.Sets;
 import com.reactioncraft.reactioncraft;
+import com.reactioncraft.core.ItemModelProvider;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -15,7 +16,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemTool;
 import net.minecraft.util.ResourceLocation;
 
-public class ItemBaseAxe extends ItemTool
+public class ItemBaseAxe extends ItemTool implements ItemModelProvider
 {
 	protected String name;
     private static final Set<Block> EFFECTIVE_ON = Sets.newHashSet(new Block[] {Blocks.PLANKS, Blocks.BOOKSHELF, Blocks.LOG, Blocks.LOG2, Blocks.CHEST, Blocks.PUMPKIN, Blocks.LIT_PUMPKIN, Blocks.MELON_BLOCK, Blocks.LADDER, Blocks.WOODEN_BUTTON, Blocks.WOODEN_PRESSURE_PLATE});
@@ -44,8 +45,9 @@ public class ItemBaseAxe extends ItemTool
         return material != Material.WOOD && material != Material.PLANTS && material != Material.VINE ? super.getStrVsBlock(stack, state) : this.efficiencyOnProperMaterial;
     }
     
+    @Override
     public void registerItemModel() 
-	{
-		reactioncraft.proxy.registerItemRenderer(this, 0, this.name);
-	}
+    {
+        reactioncraft.proxy.registerItemRenderer(this, 0, this.name);
+    }
 }

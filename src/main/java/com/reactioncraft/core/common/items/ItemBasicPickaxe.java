@@ -1,11 +1,12 @@
 package com.reactioncraft.core.common.items;
 
 import com.reactioncraft.reactioncraft;
+import com.reactioncraft.core.ItemModelProvider;
 
 import net.minecraft.item.ItemPickaxe;
 import net.minecraft.util.ResourceLocation;
 
-public class ItemBasicPickaxe extends ItemPickaxe
+public class ItemBasicPickaxe extends ItemPickaxe implements ItemModelProvider
 {
 	protected String name;
     public ItemBasicPickaxe(String var1, ToolMaterial var2)
