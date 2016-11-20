@@ -2,16 +2,23 @@ package com.reactioncraft.food.common;
 
 
 import com.reactioncraft.reactioncraft;
+import com.reactioncraft.core.ItemModelProvider;
 import com.reactioncraft.core.common.items.ItemBaseSword;
 
+import net.minecraft.entity.Entity;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.ItemSword;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 
-public class ItemKnife extends ItemBaseSword
+public class ItemKnife extends ItemBaseSword implements ItemModelProvider
 {
+	protected String name;
+	
     public ItemKnife(String name)
     {
         super(name, ToolMaterial.IRON);
+        this.name = name;
         this.setMaxStackSize(1);
         this.setMaxDamage(25);
         this.setCreativeTab(reactioncraft.ReactioncraftItems);
@@ -27,4 +34,9 @@ public class ItemKnife extends ItemBaseSword
     {
         return false;
     }
+    
+    public void registerItemModel() 
+	{
+		reactioncraft.proxy.registerItemRenderer(this, 0, this.name);
+	}
 }

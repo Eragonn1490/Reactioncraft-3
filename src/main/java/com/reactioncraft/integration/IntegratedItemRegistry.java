@@ -27,40 +27,40 @@ public class IntegratedItemRegistry
 
 
         //Modified Food Drops
-        IntegratedItems.raw_human       = register(new ItemFoodBase("raw_human",    3, 0.6f, false));
-        IntegratedItems.cooked_human    = register(new ItemFoodBase("cooked_human", 4, 0.8f, false));
-        IntegratedItems.raw_lamb        = register(new ItemFoodBase("raw_lamb",     3, 0.6f, false));
-        IntegratedItems.cooked_lamb     = register(new ItemFoodBase("cooked_lamb",  8, 0.8f, false));
-        IntegratedItems.raw_horse       = register(new ItemFoodBase("raw_horse",    3, 0.6f, false));
-        IntegratedItems.cooked_horse    = register(new ItemFoodBase("cooked_horse", 4, 0.8f, false));
-        IntegratedItems.chicken_head    = register(new ItemchickenHead("chicken_head", 3, 0.6f, false));
-        IntegratedItems.beef_chunk      = register(new ItemFoodBase("raw_beef",     3, 0.6f, false));
-        IntegratedItems.pork_chunk      = register(new ItemFoodBase("raw_pork",     3, 0.6f, false));
+        IntegratedItems.raw_human       = register(new ItemFoodBase("raw_human",    3, 0.6f, true));
+        IntegratedItems.cooked_human    = register(new ItemFoodBase("cooked_human", 4, 0.8f, true));
+        IntegratedItems.raw_lamb        = register(new ItemFoodBase("raw_lamb",     3, 0.6f, true));
+        IntegratedItems.cooked_lamb     = register(new ItemFoodBase("cooked_lamb",  8, 0.8f, true));
+        IntegratedItems.raw_horse       = register(new ItemFoodBase("raw_horse",    3, 0.6f, true));
+        IntegratedItems.cooked_horse    = register(new ItemFoodBase("cooked_horse", 4, 0.8f, true));
+        IntegratedItems.chicken_head    = register(new ItemchickenHead("chicken_head", 3, 0.6f, true));
+        IntegratedItems.beef_chunk      = register(new ItemFoodBase("raw_beef",     3, 0.6f, true));
+        IntegratedItems.pork_chunk      = register(new ItemFoodBase("raw_pork",     3, 0.6f, true));
 
         //Food Items
-        IntegratedItems.AncientFruit       = register(new ItemBase("AncientFruit")      .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.EdibleFlesh        = register(new ItemBase("EdibleFlesh")       .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.cookedCorn         = register(new ItemBase("cookedCorn")        .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.popcornseeds       = register(new ItemBase("popcornseeds")      .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.bagofpopcorn       = register(new ItemBase("bagofpopcorn")      .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.poppedbagofpopcorn = register(new ItemBase("poppedbagofpopcorn").setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.UnwrappedCorn      = register(new ItemBase("UnwrappedCorn")     .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.rawcorn            = register(new ItemBase("rawcorn")           .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.ChickenNuggets     = register(new ItemBase("ChickenNuggets")    .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.RawNuggets         = register(new ItemBase("RawNuggets")        .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.SlicedBread        = register(new ItemBase("SlicedBread")       .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.HamSandwich        = register(new ItemBase("HamSandwich")       .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.Hamburger          = register(new ItemBase("Hamburger")         .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.Cheeseburger       = register(new ItemBase("Cheeseburger")      .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.Bacon              = register(new ItemBase("Bacon")             .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.BaconRaw           = register(new ItemBase("BaconRaw")          .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.cheese             = register(new ItemBase("cheese")            .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.churn              = register(new ItemBase("churn")             .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.buns               = register(new ItemBase("buns")              .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.SamonRaw           = register(new ItemBase("SamonRaw")          .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.Samon              = register(new ItemBase("Samon")             .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.YellowTailRaw      = register(new ItemBase("YellowTailRaw")     .setCreativeTab(reactioncraft.ReactioncraftItems));
-        IntegratedItems.SandStonePaste     = register(new ItemBase("YellowTailCooked")  .setCreativeTab(reactioncraft.ReactioncraftItems));
+        IntegratedItems.AncientFruit       = register(new ItemFoodBase("AncientFruit", 3, 0.6f, true));
+        IntegratedItems.EdibleFlesh        = register(new ItemFoodBase("EdibleFlesh", 3, 0.6f, true));
+        IntegratedItems.cookedCorn         = register(new ItemFoodBase("cookedCorn", 3, 0.6f, true));
+        IntegratedItems.popcornseeds       = register(new ItemBase("popcornseeds"));
+        IntegratedItems.bagofpopcorn       = register(new ItemBase("bagofpopcorn"));
+        IntegratedItems.poppedbagofpopcorn = register(new ItemFoodBase("poppedbagofpopcorn", 3, 0.6f, true));
+        IntegratedItems.UnwrappedCorn      = register(new ItemFoodBase("UnwrappedCorn", 3, 0.6f, true));
+        IntegratedItems.rawcorn            = register(new ItemBase("rawcorn"));
+        IntegratedItems.ChickenNuggets     = register(new ItemFoodBase("ChickenNuggets", 3, 0.6f, true));
+        IntegratedItems.RawNuggets         = register(new ItemFoodBase("RawNuggets", 3, 0.6f, true));
+        IntegratedItems.SlicedBread        = register(new ItemFoodBase("SlicedBread", 3, 0.6f, true));
+        IntegratedItems.HamSandwich        = register(new ItemFoodBase("HamSandwich", 3, 0.6f, true));
+        IntegratedItems.Hamburger          = register(new ItemFoodBase("Hamburger", 3, 0.6f, true));
+        IntegratedItems.Cheeseburger       = register(new ItemFoodBase("Cheeseburger", 3, 0.6f, true));
+        IntegratedItems.Bacon              = register(new ItemFoodBase("Bacon", 3, 0.6f, true));
+        IntegratedItems.raw_bacon           = register(new ItemFoodBase("raw_bacon", 3, 0.6f, true));
+        IntegratedItems.cheese             = register(new ItemFoodBase("cheese", 3, 0.6f, true));
+        IntegratedItems.churn              = register(new ItemBase("churn"));
+        IntegratedItems.buns               = register(new ItemFoodBase("buns", 3, 0.6f, true));
+        IntegratedItems.SamonRaw           = register(new ItemFoodBase("SamonRaw", 3, 0.6f, true));
+        IntegratedItems.Samon              = register(new ItemFoodBase("Samon", 3, 0.6f, true));
+        IntegratedItems.YellowTailRaw      = register(new ItemFoodBase("YellowTailRaw", 3, 0.6f, true));
+        IntegratedItems.YellowTailCooked     = register(new ItemFoodBase("YellowTailCooked", 3, 0.6f, true));
 
         //Net Items
         IntegratedItems.hilt         = register(new ItemPieceHilt("piece_hilt")       .setCreativeTab(null));
