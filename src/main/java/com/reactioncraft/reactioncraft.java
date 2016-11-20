@@ -4,7 +4,7 @@ package com.reactioncraft;
 import com.reactioncraft.api.ExclusionList;
 //Reactioncraft Imports
 import com.reactioncraft.core.CommonProxy;
-import com.reactioncraft.core.Remapper;
+//import com.reactioncraft.core.Remapper;
 import com.reactioncraft.core.common.biomes.BiomeManager;
 import com.reactioncraft.core.common.creativeTab.RCTAB;
 import com.reactioncraft.core.common.creativeTab.RCTAB1;
