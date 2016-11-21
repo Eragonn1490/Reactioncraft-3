@@ -17,6 +17,7 @@ out
 # gradle
 build
 .gradle
+gradle
 
 # forge
 CREDITS-fml
@@ -24,9 +25,6 @@ gradlew
 LICENSE-new
 MinecraftForge-Credits
 Paulscode SoundSystem CodecIBXM License
-Reactioncraft-3_Client.launch
-Reactioncraft-3_Server.launch
 
 # other
-eclipse
 run

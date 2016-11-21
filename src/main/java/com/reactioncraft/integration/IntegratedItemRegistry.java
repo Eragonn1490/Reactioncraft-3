@@ -34,7 +34,7 @@ public class IntegratedItemRegistry
         IntegratedItems.raw_horse       = register(new ItemFoodBase("raw_horse",    3, 0.6f, true));
         IntegratedItems.cooked_horse    = register(new ItemFoodBase("cooked_horse", 4, 0.8f, true));
         IntegratedItems.chicken_head    = register(new ItemchickenHead("chicken_head", 3, 0.6f, true));
-        IntegratedItems.beef_chunk      = register(new ItemFoodBase("raw_beef",     3, 0.6f, true));
+        IntegratedItems.beef_chunk      = register(new ItemFoodBase("beef_chunk",     3, 0.6f, true));
         IntegratedItems.pork_chunk      = register(new ItemFoodBase("raw_pork",     3, 0.6f, true));
 
         //Food Items
@@ -57,8 +57,8 @@ public class IntegratedItemRegistry
         IntegratedItems.cheese             = register(new ItemFoodBase("cheese", 3, 0.6f, true));
         IntegratedItems.churn              = register(new ItemBase("churn"));
         IntegratedItems.buns               = register(new ItemFoodBase("buns", 3, 0.6f, true));
-        IntegratedItems.salmonRaw          = register(new ItemFoodBase("SamonRaw", 3, 0.6f, true));
-        IntegratedItems.salmon             = register(new ItemFoodBase("Samon", 3, 0.6f, true));
+        IntegratedItems.salmonRaw          = register(new ItemFoodBase("salmonRaw", 3, 0.6f, true));
+        IntegratedItems.salmon             = register(new ItemFoodBase("salmon", 3, 0.6f, true));
         IntegratedItems.YellowTailRaw      = register(new ItemFoodBase("YellowTailRaw", 3, 0.6f, true));
         IntegratedItems.YellowTailCooked   = register(new ItemFoodBase("YellowTailCooked", 3, 0.6f, true));
 
